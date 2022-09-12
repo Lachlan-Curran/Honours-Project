@@ -1,0 +1,398 @@
+[2022-06-27 10:53:02,936] multiqc                                            [DEBUG  ]  No MultiQC config found: /srv/sw/miniconda3/envs/acepipe-2020.11/lib/python3.6/site-packages/multiqc_config.yaml
+[2022-06-27 10:53:02,937] multiqc                                            [DEBUG  ]  No MultiQC config found: /srv/home/uqhwije3/.multiqc_config.yaml
+[2022-06-27 10:53:02,937] multiqc                                            [DEBUG  ]  No MultiQC config found: multiqc_config.yaml
+[2022-06-27 10:53:02,948] multiqc                                            [DEBUG  ]  Loading config settings from: /srv/sw/acepipe_config/multiqc_config/multiqc_config.yaml
+[2022-06-27 10:53:02,948] multiqc                                            [DEBUG  ]  New config 'title': ACE Amplicon Pipeline
+[2022-06-27 10:53:02,949] multiqc                                            [DEBUG  ]  New config 'custom_logo': /srv/sw/acepipe_config/multiqc_config/logo.png
+[2022-06-27 10:53:02,949] multiqc                                            [DEBUG  ]  New config 'custom_logo_url': http://ecogenomic.org
+[2022-06-27 10:53:02,949] multiqc                                            [DEBUG  ]  New config 'custom_logo_title': Australian Centre for Ecogenomics
+[2022-06-27 10:53:02,949] multiqc                                            [DEBUG  ]  New config 'subtitle': Australian Centre for Ecogenomics
+[2022-06-27 10:53:02,950] multiqc                                            [DEBUG  ]  New config 'intro_text': The University of Queensland
+[2022-06-27 10:53:02,950] multiqc                                            [DEBUG  ]  New config 'report_header_info': [{'Application Type': 'Amplicon-seq'}, {'Project Type': 'Amplicon'}, {'Sequencing Setup': '2x300'}]
+[2022-06-27 10:53:02,950] multiqc                                            [DEBUG  ]  New config 'module_order': [{'fastqc': {'name': 'FastQC (raw)', 'path_filters': ['*_001_fastqc.zip']}}, 'cutadapt', 'trimmomatic', {'fastqc': {'name': 'FastQC (trimmed)', 'info': 'This section of the report shows FastQC results after adapter trimming.', 'target': '', 'path_filters': ['*_001_trimmed_fastqc.zip']}}]
+[2022-06-27 10:53:02,951] multiqc                                            [DEBUG  ]  Command used: /srv/sw/miniconda3/envs/acepipe-2020.11/bin/multiqc /srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/qc_reports --force -c /srv/sw/acepipe_config/multiqc_config/multiqc_config.yaml --outdir /srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results
+[2022-06-27 10:53:04,400] multiqc                                            [WARNING]  MultiQC Version v1.12 now available!
+[2022-06-27 10:53:04,401] multiqc                                            [INFO   ]  This is MultiQC v1.8
+[2022-06-27 10:53:04,401] multiqc                                            [DEBUG  ]  Command     : /srv/sw/miniconda3/envs/acepipe-2020.11/bin/multiqc /srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/qc_reports --force -c /srv/sw/acepipe_config/multiqc_config/multiqc_config.yaml --outdir /srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results
+[2022-06-27 10:53:04,401] multiqc                                            [DEBUG  ]  Working dir : /srv/home/uqhwije3/service_bioinformatics/acepipe_runs
+[2022-06-27 10:53:04,401] multiqc                                            [INFO   ]  Template    : default
+[2022-06-27 10:53:04,401] multiqc                                            [DEBUG  ]  Running Python 3.6.12 | packaged by conda-forge | (default, Dec  9 2020, 00:36:02)  [GCC 9.3.0]
+[2022-06-27 10:53:04,401] multiqc                                            [INFO   ]  Report title: ACE Amplicon Pipeline
+[2022-06-27 10:53:04,402] multiqc                                            [INFO   ]  Searching   : /srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/qc_reports
+[2022-06-27 10:53:04,402] multiqc                                            [DEBUG  ]  Analysing modules: adapterRemoval, afterqc, bamtools, bbmap, bcftools, bcl2fastq, biobambam2, biobloomtools, biscuit, bismark, bowtie1, bowtie2, busco, clipandmerge, clusterflow, conpair, custom_content, damageprofiler, dedup, deeptools, disambiguate, fastp, fastq_screen, featureCounts, fgbio, flash, flexbar, gatk, goleft_indexcov, happy, hicexplorer, hicpro, hicup, hisat2, homer, htseq, interop, jellyfish, kallisto, kat, leehom, longranger, macs2, methylQA, minionqc, mirtrace, mosdepth, mtnucratio, peddy, phantompeakqualtools, picard, preseq, prokka, qorts, qualimap, quast, rna_seqc, rsem, rseqc, salmon, samblaster, samtools, sargasso, seqyclean, sexdeterrmine, skewer, slamdunk, snpeff, sortmerna, stacks, star, supernova, theta2, tophat, vcftools, verifybamid, fastqc, cutadapt, trimmomatic, fastqc
+[2022-06-27 10:53:04,403] multiqc                                            [DEBUG  ]  Using temporary directory for creating report: /tmp/tmpl_jvqrnq
+[2022-06-27 10:53:04,718] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4602_J4816_S215_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4603_J4816_S216_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,719] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4604_J4816_S217_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,720] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4605_J4816_S218_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4606_J4816_S219_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,721] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4607_J4816_S220_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,722] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4608_J4816_S221_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4609_J4816_S222_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,723] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4610_J4816_S223_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4611_J4816_S224_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,724] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4612_J4816_S225_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4613_J4816_S226_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,725] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4614_J4816_S227_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,726] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4615_J4816_S228_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4616_J4816_S229_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,727] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4617_J4816_S230_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,728] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4618_J4816_S231_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4619_J4816_S232_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,729] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4620_J4816_S233_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4621_J4816_S234_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,730] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4622_J4816_S235_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,731] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4623_J4816_S236_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4624_J4816_S237_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,732] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4625_J4816_S238_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4626_J4816_S239_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,733] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4627_J4816_S240_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,734] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4628_J4816_S241_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4629_J4816_S242_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,735] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4630_J4816_S243_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,736] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4631_J4816_S244_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4632_J4816_S245_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,737] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4633_J4816_S246_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4634_J4816_S247_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,738] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4635_J4816_S248_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4636_J4816_S249_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,739] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4637_J4816_S250_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,740] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4638_J4816_S251_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4639_J4816_S252_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,741] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4640_J4816_S253_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,742] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4641_J4816_S254_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4642_J4816_S255_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,743] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4643_J4816_S256_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4644_J4816_S257_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,744] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4645_J4816_S258_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,745] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4646_J4816_S259_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4647_J4816_S260_L001_R1_001_fastqc.html
+[2022-06-27 10:53:04,746] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4648_J4816_S261_L001_R1_001_fastqc.html
+[2022-06-27 10:53:07,259] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4602_J4816_S215_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,260] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4603_J4816_S216_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,261] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4604_J4816_S217_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,261] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4605_J4816_S218_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,262] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4606_J4816_S219_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,262] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4607_J4816_S220_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,263] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4608_J4816_S221_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,264] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4609_J4816_S222_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,264] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4610_J4816_S223_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,265] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4611_J4816_S224_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,266] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4612_J4816_S225_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,266] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4613_J4816_S226_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,267] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4614_J4816_S227_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,267] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4615_J4816_S228_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,268] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4616_J4816_S229_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,269] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4617_J4816_S230_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,269] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4618_J4816_S231_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,270] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4619_J4816_S232_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,270] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4620_J4816_S233_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,271] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4621_J4816_S234_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,272] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4622_J4816_S235_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,272] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4623_J4816_S236_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,273] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4624_J4816_S237_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4625_J4816_S238_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,274] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4626_J4816_S239_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4627_J4816_S240_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,275] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4628_J4816_S241_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4629_J4816_S242_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,276] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4630_J4816_S243_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,277] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4631_J4816_S244_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,278] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4632_J4816_S245_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,278] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4633_J4816_S246_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4634_J4816_S247_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,279] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4635_J4816_S248_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,280] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4636_J4816_S249_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4637_J4816_S250_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,281] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4638_J4816_S251_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,282] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4639_J4816_S252_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,282] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4640_J4816_S253_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4641_J4816_S254_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,283] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4642_J4816_S255_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,284] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4643_J4816_S256_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4644_J4816_S257_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,285] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4645_J4816_S258_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,286] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4646_J4816_S259_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,287] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4647_J4816_S260_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,287] multiqc                                            [DEBUG  ]  Ignoring file as matched an ignore pattern: SE4648_J4816_S261_L001_R1_001_trimmed_fastqc.html
+[2022-06-27 10:53:07,951] multiqc.plots.bargraph                             [DEBUG  ]  Using matplotlib version 3.1.1
+[2022-06-27 10:53:07,953] multiqc.plots.linegraph                            [DEBUG  ]  Using matplotlib version 3.1.1
+[2022-06-27 10:53:08,114] multiqc                                            [DEBUG  ]  No samples found: adapterRemoval
+[2022-06-27 10:53:08,130] multiqc                                            [DEBUG  ]  No samples found: afterqc
+[2022-06-27 10:53:08,143] multiqc                                            [DEBUG  ]  No samples found: bamtools
+[2022-06-27 10:53:08,170] multiqc                                            [DEBUG  ]  No samples found: bbmap
+[2022-06-27 10:53:08,184] multiqc                                            [DEBUG  ]  No samples found: bcftools
+[2022-06-27 10:53:08,199] multiqc                                            [DEBUG  ]  No samples found: bcl2fastq
+[2022-06-27 10:53:08,230] multiqc                                            [DEBUG  ]  No samples found: biobambam2
+[2022-06-27 10:53:08,242] multiqc                                            [DEBUG  ]  No samples found: biobloomtools
+[2022-06-27 10:53:08,259] multiqc                                            [DEBUG  ]  No samples found: biscuit
+[2022-06-27 10:53:08,276] multiqc                                            [DEBUG  ]  No samples found: bismark
+[2022-06-27 10:53:08,288] multiqc                                            [DEBUG  ]  No samples found: bowtie1
+[2022-06-27 10:53:08,300] multiqc                                            [DEBUG  ]  No samples found: bowtie2
+[2022-06-27 10:53:08,316] multiqc                                            [DEBUG  ]  No samples found: busco
+[2022-06-27 10:53:08,328] multiqc                                            [DEBUG  ]  No samples found: clipandmerge
+[2022-06-27 10:53:08,344] multiqc                                            [DEBUG  ]  No samples found: clusterflow
+[2022-06-27 10:53:08,356] multiqc                                            [DEBUG  ]  No samples found: conpair
+[2022-06-27 10:53:08,372] multiqc                                            [DEBUG  ]  No samples found: custom_content
+[2022-06-27 10:53:08,385] multiqc                                            [DEBUG  ]  No samples found: damageprofiler
+[2022-06-27 10:53:08,397] multiqc                                            [DEBUG  ]  No samples found: dedup
+[2022-06-27 10:53:08,420] multiqc                                            [DEBUG  ]  No samples found: deeptools
+[2022-06-27 10:53:08,433] multiqc                                            [DEBUG  ]  No samples found: disambiguate
+[2022-06-27 10:53:08,446] multiqc                                            [DEBUG  ]  No samples found: fastp
+[2022-06-27 10:53:08,458] multiqc                                            [DEBUG  ]  No samples found: fastq_screen
+[2022-06-27 10:53:08,470] multiqc                                            [DEBUG  ]  No samples found: featureCounts
+[2022-06-27 10:53:08,484] multiqc                                            [DEBUG  ]  No samples found: fgbio
+[2022-06-27 10:53:08,499] multiqc                                            [DEBUG  ]  No samples found: flash
+[2022-06-27 10:53:08,515] multiqc                                            [DEBUG  ]  No samples found: flexbar
+[2022-06-27 10:53:08,531] multiqc                                            [DEBUG  ]  No samples found: gatk
+[2022-06-27 10:53:08,543] multiqc                                            [DEBUG  ]  No samples found: goleft_indexcov
+[2022-06-27 10:53:08,554] multiqc                                            [DEBUG  ]  No samples found: happy
+[2022-06-27 10:53:08,566] multiqc                                            [DEBUG  ]  No samples found: hicexplorer
+[2022-06-27 10:53:08,577] multiqc                                            [DEBUG  ]  No samples found: hicpro
+[2022-06-27 10:53:08,589] multiqc                                            [DEBUG  ]  No samples found: hicup
+[2022-06-27 10:53:08,600] multiqc                                            [DEBUG  ]  No samples found: hisat2
+[2022-06-27 10:53:08,614] multiqc                                            [DEBUG  ]  No samples found: homer
+[2022-06-27 10:53:08,626] multiqc                                            [DEBUG  ]  No samples found: htseq
+[2022-06-27 10:53:08,637] multiqc                                            [DEBUG  ]  No samples found: interop
+[2022-06-27 10:53:08,652] multiqc                                            [DEBUG  ]  No samples found: jellyfish
+[2022-06-27 10:53:08,664] multiqc                                            [DEBUG  ]  No samples found: kallisto
+[2022-06-27 10:53:08,675] multiqc                                            [DEBUG  ]  No samples found: kat
+[2022-06-27 10:53:08,687] multiqc                                            [DEBUG  ]  No samples found: leehom
+[2022-06-27 10:53:08,708] multiqc                                            [DEBUG  ]  No samples found: longranger
+[2022-06-27 10:53:08,719] multiqc                                            [DEBUG  ]  No samples found: macs2
+[2022-06-27 10:53:08,731] multiqc                                            [DEBUG  ]  No samples found: methylQA
+[2022-06-27 10:53:08,746] multiqc                                            [DEBUG  ]  No samples found: minionqc
+[2022-06-27 10:53:08,757] multiqc                                            [DEBUG  ]  No samples found: mirtrace
+[2022-06-27 10:53:08,773] multiqc                                            [DEBUG  ]  No samples found: mosdepth
+[2022-06-27 10:53:08,788] multiqc                                            [DEBUG  ]  No samples found: mtnucratio
+[2022-06-27 10:53:08,799] multiqc                                            [DEBUG  ]  No samples found: peddy
+[2022-06-27 10:53:08,811] multiqc                                            [DEBUG  ]  No samples found: phantompeakqualtools
+[2022-06-27 10:53:08,819] multiqc                                            [DEBUG  ]  No samples found: picard
+[2022-06-27 10:53:08,836] multiqc                                            [DEBUG  ]  No samples found: preseq
+[2022-06-27 10:53:08,848] multiqc                                            [DEBUG  ]  No samples found: prokka
+[2022-06-27 10:53:08,863] multiqc                                            [DEBUG  ]  No samples found: qorts
+[2022-06-27 10:53:08,876] multiqc                                            [DEBUG  ]  No samples found: qualimap
+[2022-06-27 10:53:08,890] multiqc                                            [DEBUG  ]  No samples found: quast
+[2022-06-27 10:53:08,905] multiqc                                            [DEBUG  ]  No samples found: rna_seqc
+[2022-06-27 10:53:08,918] multiqc                                            [DEBUG  ]  No samples found: rsem
+[2022-06-27 10:53:08,939] multiqc                                            [DEBUG  ]  No samples found: rseqc
+[2022-06-27 10:53:08,951] multiqc                                            [DEBUG  ]  No samples found: salmon
+[2022-06-27 10:53:08,968] multiqc                                            [DEBUG  ]  No samples found: samblaster
+[2022-06-27 10:53:08,989] multiqc                                            [DEBUG  ]  No samples found: samtools
+[2022-06-27 10:53:09,001] multiqc                                            [DEBUG  ]  No samples found: sargasso
+[2022-06-27 10:53:09,012] multiqc                                            [DEBUG  ]  No samples found: seqyclean
+[2022-06-27 10:53:09,024] multiqc                                            [DEBUG  ]  No samples found: sexdeterrmine
+[2022-06-27 10:53:09,039] multiqc                                            [DEBUG  ]  No samples found: skewer
+[2022-06-27 10:53:09,051] multiqc                                            [DEBUG  ]  No samples found: slamdunk
+[2022-06-27 10:53:09,062] multiqc                                            [DEBUG  ]  No samples found: snpeff
+[2022-06-27 10:53:09,077] multiqc                                            [DEBUG  ]  No samples found: sortmerna
+[2022-06-27 10:53:09,090] multiqc                                            [DEBUG  ]  No samples found: stacks
+[2022-06-27 10:53:09,102] multiqc                                            [DEBUG  ]  No samples found: star
+[2022-06-27 10:53:09,117] multiqc                                            [DEBUG  ]  No samples found: supernova
+[2022-06-27 10:53:09,132] multiqc                                            [DEBUG  ]  No samples found: theta2
+[2022-06-27 10:53:09,147] multiqc                                            [DEBUG  ]  No samples found: tophat
+[2022-06-27 10:53:09,166] multiqc                                            [DEBUG  ]  No samples found: vcftools
+[2022-06-27 10:53:09,179] multiqc                                            [DEBUG  ]  No samples found: verifybamid
+[2022-06-27 10:53:09,197] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4602_J4816_S215_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,239] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4603_J4816_S216_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,282] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4604_J4816_S217_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,319] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4605_J4816_S218_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,349] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4606_J4816_S219_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,378] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4607_J4816_S220_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,407] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4608_J4816_S221_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,437] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4609_J4816_S222_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,466] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4610_J4816_S223_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,496] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4611_J4816_S224_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,583] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4612_J4816_S225_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,613] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4613_J4816_S226_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,642] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4614_J4816_S227_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,672] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4615_J4816_S228_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,702] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4616_J4816_S229_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,730] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4617_J4816_S230_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,759] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4618_J4816_S231_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,788] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4619_J4816_S232_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,818] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4620_J4816_S233_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,847] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4621_J4816_S234_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,877] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4622_J4816_S235_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,906] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4623_J4816_S236_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,936] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4624_J4816_S237_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,965] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4625_J4816_S238_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:09,994] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4626_J4816_S239_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,023] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4627_J4816_S240_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,052] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4628_J4816_S241_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,081] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4629_J4816_S242_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,109] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4630_J4816_S243_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,137] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4631_J4816_S244_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,166] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4632_J4816_S245_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,194] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4633_J4816_S246_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,224] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4634_J4816_S247_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,252] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4635_J4816_S248_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,281] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4636_J4816_S249_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,309] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4637_J4816_S250_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,338] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4638_J4816_S251_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,367] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4639_J4816_S252_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,396] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4640_J4816_S253_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,425] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4641_J4816_S254_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,453] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4642_J4816_S255_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,482] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4643_J4816_S256_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,512] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4644_J4816_S257_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,540] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4645_J4816_S258_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,569] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4646_J4816_S259_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,601] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4647_J4816_S260_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,630] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4648_J4816_S261_L001_R1_001_fastqc.zip' as it matched the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,659] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4602_J4816_S215_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,659] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4603_J4816_S216_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,659] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4604_J4816_S217_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,659] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4605_J4816_S218_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,659] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4606_J4816_S219_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,659] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4607_J4816_S220_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4608_J4816_S221_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4609_J4816_S222_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4610_J4816_S223_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4611_J4816_S224_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4612_J4816_S225_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4613_J4816_S226_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4614_J4816_S227_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4615_J4816_S228_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4616_J4816_S229_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4617_J4816_S230_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4618_J4816_S231_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,660] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4619_J4816_S232_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4620_J4816_S233_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4621_J4816_S234_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4622_J4816_S235_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4623_J4816_S236_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4624_J4816_S237_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4625_J4816_S238_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4626_J4816_S239_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4627_J4816_S240_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4628_J4816_S241_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4629_J4816_S242_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4630_J4816_S243_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,661] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4631_J4816_S244_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4632_J4816_S245_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4633_J4816_S246_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4634_J4816_S247_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4635_J4816_S248_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4636_J4816_S249_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4637_J4816_S250_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4638_J4816_S251_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4639_J4816_S252_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4640_J4816_S253_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4641_J4816_S254_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4642_J4816_S255_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4643_J4816_S256_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,663] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4644_J4816_S257_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,663] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4645_J4816_S258_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,663] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4646_J4816_S259_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,663] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4647_J4816_S260_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,663] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4648_J4816_S261_L001_R1_001_trimmed_fastqc.zip' as it didn't match the path_filters for 'FastQC (raw)'
+[2022-06-27 10:53:10,663] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 47 reports
+[2022-06-27 10:53:12,751] multiqc.modules.cutadapt.cutadapt                  [INFO   ]  Found 47 reports
+[2022-06-27 10:53:12,800] multiqc.modules.trimmomatic.trimmomatic            [INFO   ]  Found 47 logs
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4602_J4816_S215_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4603_J4816_S216_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4604_J4816_S217_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4605_J4816_S218_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4606_J4816_S219_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4607_J4816_S220_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4608_J4816_S221_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4609_J4816_S222_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4610_J4816_S223_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4611_J4816_S224_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4612_J4816_S225_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4613_J4816_S226_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4614_J4816_S227_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4615_J4816_S228_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4616_J4816_S229_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4617_J4816_S230_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4618_J4816_S231_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,812] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4619_J4816_S232_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4620_J4816_S233_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4621_J4816_S234_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4622_J4816_S235_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4623_J4816_S236_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4624_J4816_S237_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4625_J4816_S238_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4626_J4816_S239_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4627_J4816_S240_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4628_J4816_S241_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,813] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4629_J4816_S242_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4630_J4816_S243_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4631_J4816_S244_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4632_J4816_S245_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4633_J4816_S246_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4634_J4816_S247_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4635_J4816_S248_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4636_J4816_S249_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4637_J4816_S250_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4638_J4816_S251_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4639_J4816_S252_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,814] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4640_J4816_S253_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4641_J4816_S254_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4642_J4816_S255_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4643_J4816_S256_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4644_J4816_S257_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4645_J4816_S258_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4646_J4816_S259_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4647_J4816_S260_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Skipping 'SE4648_J4816_S261_L001_R1_001_fastqc.zip' as it didn't match the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,815] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4602_J4816_S215_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,906] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4603_J4816_S216_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,931] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4604_J4816_S217_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,956] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4605_J4816_S218_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:12,986] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4606_J4816_S219_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,012] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4607_J4816_S220_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,037] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4608_J4816_S221_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,062] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4609_J4816_S222_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,087] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4610_J4816_S223_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,112] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4611_J4816_S224_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,137] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4612_J4816_S225_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,162] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4613_J4816_S226_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,187] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4614_J4816_S227_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,212] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4615_J4816_S228_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,237] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4616_J4816_S229_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,263] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4617_J4816_S230_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,288] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4618_J4816_S231_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,313] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4619_J4816_S232_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,338] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4620_J4816_S233_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,363] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4621_J4816_S234_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,388] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4622_J4816_S235_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,413] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4623_J4816_S236_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,438] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4624_J4816_S237_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,463] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4625_J4816_S238_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,488] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4626_J4816_S239_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,514] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4627_J4816_S240_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,538] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4628_J4816_S241_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,563] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4629_J4816_S242_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,588] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4630_J4816_S243_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,612] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4631_J4816_S244_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,637] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4632_J4816_S245_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,662] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4633_J4816_S246_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,687] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4634_J4816_S247_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,712] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4635_J4816_S248_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,736] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4636_J4816_S249_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,761] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4637_J4816_S250_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,786] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4638_J4816_S251_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,811] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4639_J4816_S252_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,836] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4640_J4816_S253_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,861] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4641_J4816_S254_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,886] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4642_J4816_S255_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,910] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4643_J4816_S256_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,935] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4644_J4816_S257_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,960] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4645_J4816_S258_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:13,984] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4646_J4816_S259_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:14,008] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4647_J4816_S260_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:14,032] multiqc.modules.base_module                        [DEBUG  ]  fastqc/zip - Selecting 'SE4648_J4816_S261_L001_R1_001_trimmed_fastqc.zip' as it matched the path_filters for 'FastQC (trimmed)'
+[2022-06-27 10:53:14,056] multiqc.modules.fastqc.fastqc                      [INFO   ]  Found 47 reports
+[2022-06-27 10:53:15,686] multiqc                                            [INFO   ]  Compressing plot data
+[2022-06-27 10:53:17,860] multiqc                                            [INFO   ]  Report      : ../../../../projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_report.html
+[2022-06-27 10:53:17,860] multiqc                                            [INFO   ]  Data        : ../../../../projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data
+[2022-06-27 10:53:17,899] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl_jvqrnq/multiqc_data/multiqc_sources.txt' to '/srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data'
+[2022-06-27 10:53:17,965] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl_jvqrnq/multiqc_data/multiqc_qualimap_bamqc_genome_results.txt' to '/srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data'
+[2022-06-27 10:53:17,967] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl_jvqrnq/multiqc_data/multiqc_trimmomatic.txt' to '/srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data'
+[2022-06-27 10:53:17,970] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl_jvqrnq/multiqc_data/multiqc_general_stats.txt' to '/srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data'
+[2022-06-27 10:53:18,008] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl_jvqrnq/multiqc_data/multiqc_fastqc.txt' to '/srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data'
+[2022-06-27 10:53:18,010] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl_jvqrnq/multiqc_data/multiqc_data.json' to '/srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data'
+[2022-06-27 10:53:18,068] multiqc                                            [DEBUG  ]  Moving data file from '/tmp/tmpl_jvqrnq/multiqc_data/multiqc_cutadapt.txt' to '/srv/projects/ace_bioinformatics/acepipe_results/P271_C_single/J4816/result/multiqc_results/multiqc_data'
+[2022-06-27 10:53:18,483] multiqc                                            [INFO   ]  MultiQC complete

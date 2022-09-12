@@ -1,0 +1,26 @@
+﻿Transect,Plot,PAR
+Ambient,Ambient_Mean,1639.5
+Forest ,Forest_1,1
+Forest ,Forest_2,3
+Forest ,Forest_3,5
+Forest_Edge_Interior,Forest_Edge_Interior_1,330
+Forest_Edge_Interior,Forest_Edge_Interior_2,17
+Forest_Edge_Interior,Forest_Edge_Interior_3,277
+Forest_Edge_Exterior,Forest_Edge_Exterior_1,460
+Forest_Edge_Exterior,Forest_Edge_Exterior_2,198
+Forest_Edge_Exterior,Forest_Edge_Exterior_3,364
+Pioneer_Near,Pioneer_Near_1,11
+Pioneer_Near,Pioneer_Near_2,93
+Pioneer_Near,Pioneer_Near_3,16
+Pioneer_Far,Pioneer_Far_1,12
+Pioneer_Far,Pioneer_Far_2,64
+Pioneer_Far,Pioneer_Far_3,40
+Grass_Near,Grass_Near_1,230
+Grass_Near,Grass_Near_2,327
+Grass_Near,Grass_Near_3,166
+Grass_Far,Grass_Far_1,9
+Grass_Far,Grass_Far_2,9
+Grass_Far,Grass_Far_3,5
+UMNR,UMNR_1,1.5
+UMNR,UMNR_2,1
+UMNR,UMNR_3,2

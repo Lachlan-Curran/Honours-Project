@@ -1,0 +1,25 @@
+﻿Transect,Plot,Pen_1,Pen_2,Pen_3,Pen_4,Mean
+Forest ,Forest_1,6,6,6,7,6.25
+Forest ,Forest_2,6,8,5,6,6.25
+Forest ,Forest_3,7.5,8,7,6.5,7.25
+Forest_Edge_Interior,Forest_Edge_Interior_1,3.5,7,6,5.5,5.5
+Forest_Edge_Interior,Forest_Edge_Interior_2,5,6.5,6,5.5,5.75
+Forest_Edge_Interior,Forest_Edge_Interior_3,9,8,9,8,8.5
+Forest_Edge_Exterior,Forest_Edge_Exterior_1,8,7,7,7.5,7.375
+Forest_Edge_Exterior,Forest_Edge_Exterior_2,7.5,8.5,4,7,6.75
+Forest_Edge_Exterior,Forest_Edge_Exterior_3,7.5,8,8.5,7,7.75
+Pioneer_Near,Pioneer_Near_1,5.5,8.5,9,8,7.75
+Pioneer_Near,Pioneer_Near_2,5.5,7,7,6.5,6.5
+Pioneer_Near,Pioneer_Near_3,6.5,7,5.5,7,6.5
+Pioneer_Far,Pioneer_Far_1,7.5,8.5,7,7.5,7.625
+Pioneer_Far,Pioneer_Far_2,10.5,8.5,7.5,6.5,8.25
+Pioneer_Far,Pioneer_Far_3,7,8,9,9.5,8.375
+Grass_Near,Grass_Near_1,7.5,8,10,9,8.625
+Grass_Near,Grass_Near_2,7,6.5,8.5,6,7
+Grass_Near,Grass_Near_3,7,7.5,7.5,4.5,6.625
+Grass_Far,Grass_Far_1,6.5,5,5.5,4.5,5.375
+Grass_Far,Grass_Far_2,6.5,7,6,6.5,6.5
+Grass_Far,Grass_Far_3,7,6.5,5.5,4,5.75
+UMNR,UMNR_1,7.5,6,8.5,7.5,7.375
+UMNR,UMNR_2,8.5,8.5,8,10,8.75
+UMNR,UMNR_3,6,5,3,5,4.75

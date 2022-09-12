@@ -1,0 +1,8 @@
+"V1"
+"obs" -0.999996084203278
+"alter" greater
+"rep" 100000
+"expvar" c(Std.Obs = -1.41130452948733, Expectation = -0.00211172663666121, Variance = 0.499941235291207)
+"pvalue" 1
+"plot" list(hist = list(breaks = c(-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1), counts = c(33462, 0, 0, 0, 16617, 0, 0, 33408, 0, 16513), density = c(1.6731, 0, 0, 0, 0.83085, 0, 0, 1.6704, 0, 0.82565), mids = c(-0.9, -0.7, -0.5, -0.3, -0.1, 0.1, 0.3, 0.5, 0.7, 0.9), xname = "sim", equidist = TRUE), xlim = c(-1.10833271077173, 1.01610958644887))
+"call" mantel.rtest(m1 = UMNR_Community_Dist, m2 = Leaf_Litter_Nutrients_UMNR_Dist, nrepet = 1e+05)

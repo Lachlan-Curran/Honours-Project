@@ -1,0 +1,25 @@
+﻿Transect,Plot ,Grass_Cover
+Forest,Forest_1,1
+Forest,Forest_2,0
+Forest,Forest_3,0
+Forest_Edge_Interior,Forest_Edge_Interior_1,25.5
+Forest_Edge_Interior,Forest_Edge_Interior_2,15
+Forest_Edge_Interior,Forest_Edge_Interior_3,50
+Forest_Edge_Exterior,Forest_Edge_Exterior_1,47.5
+Forest_Edge_Exterior,Forest_Edge_Exterior_2,93
+Forest_Edge_Exterior,Forest_Edge_Exterior_3,28
+Pioneer_Near,Pioneer_Near_1,12
+Pioneer_Near,Pioneer_Near_2,81
+Pioneer_Near,Pioneer_Near_3,11
+Pionee_Far,Pioneer_Far_1,9
+Pionee_Far,Pioneer_Far_2,17.5
+Pionee_Far,Pioneer_Far_3,85
+Grass_Near,Grass_Near_1,98.5
+Grass_Near,Grass_Near_2,103
+Grass_Near,Grass_Near_3,104.5
+Grass_Far,Grass_Far_1,103
+Grass_Far,Grass_Far_2,112
+Grass_Far,Grass_Far_3,114
+UMNR,UMNR_1,2
+UMNR,UMNR_2,5
+UMNR,UMNR_3,0

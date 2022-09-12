@@ -1,0 +1,8 @@
+"V1"
+"obs" -0.322062796492965
+"alter" greater
+"rep" 10000
+"expvar" c(Std.Obs = -0.445064433575503, Expectation = -0.00756378913988514, Variance = 0.499335885348459)
+"pvalue" 0.664433556644336
+"plot" list(hist = list(breaks = c(-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1), counts = c(1713, 1643, 0, 1688, 0, 0, 1645, 0, 1706, 1605), density = c(0.8565, 0.8215, 0, 0.844, 0, 0, 0.8225, 0, 0.853, 0.8025), mids = c(-0.9, -0.7, -0.5, -0.3, -0.1, 0.1, 0.3, 0.5, 0.7, 0.9), xname = "sim", equidist = TRUE), xlim = c(-1.10798670998916, 1.11755266571433))
+"call" mantel.rtest(m1 = Guild_UMNR_Dist, m2 = Leaf_Litter_Nutrients_UMNR_Dist, nrepet = 10000)

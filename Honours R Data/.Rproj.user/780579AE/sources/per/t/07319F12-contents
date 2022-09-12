@@ -1,0 +1,205 @@
+rm(list=ls())
+library(tidyverse)
+library(dplyr)
+library(ade4) 
+library(vegan)
+#Import Communiy Data - look at all 7 transects within MC First
+Community <- read.csv("Cleaned Up Data/Community_Taxa.csv")
+Community <- as.data.frame(Community[,c(2:5138)], row.names = Community$X)
+
+Distance_From_Edge <- read.csv("Raw_Data/Distance_edge.csv")
+Distace_From_Edge <- as.data.frame(Distance_From_Edge[,c(2)], row.names = Distance_From_Edge$Transect)
+Transect <- list(Distance_From_Edge$Transect)
+
+#Remove UMNR rows 
+Community<- as.data.frame(Community[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47),])
+
+#Import Guild Data  and remove UMNR rows
+Guild <- read.csv("Cleaned Up Data/General_Guild_Abundance_by_Sample.csv")
+Guild <- as.data.frame(Guild[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47),])
+Guild <- as.data.frame((Guild[,c(2:6)]), row.names = Guild$X)
+
+#Import spatial data for each sample, note that these are dummy coordiantes that only approxiamte the relative positon of each sample within each plot
+Coordiantes <- read.csv("Raw_Data/Sample_Coordinates_MC.csv")
+
+#remove NA columns and convert first col to rownames 
+Coordiantes <- as.data.frame(Coordiantes[,c(2,3)], row.names = Coordiantes$Sample)
+
+
+
+#Break up datasets according to their transects 
+#Community
+Forest_Community <- as.data.frame(Community[c(1:6),])
+Forest_Interior_Edge_Community <- as.data.frame(Community[c(7:12),])
+Forest_Exterior_Edge_Community <- as.data.frame(Community[c(13:18),])
+Pioneer_Near_Community <- as.data.frame(Community[c(19:24),])
+Pioneer_Far_Community <- as.data.frame(Community[c(25:30),])
+Grass_Near_Community <- as.data.frame(Community[c(31:36),])
+Grass_Far_Community <- as.data.frame(Community[c(37:41),])
+
+#Guild 
+Forest_Guilds <- as.data.frame(Guild[c(1:6),])
+Forest_Interior_Edge_Guilds <- as.data.frame(Guild[c(7:12),])
+Forest_Exterior_Edge_Guilds <- as.data.frame(Guild[c(13:18),])
+Pioneer_Near_Guilds <- as.data.frame(Guild[c(19:24),])
+Pioneer_Far_Guilds <- as.data.frame(Guild[c(25:30),])
+Grass_Near_Guilds <- as.data.frame(Guild[c(31:36),])
+Grass_Far_Guilds <- as.data.frame(Guild[c(37:41),])
+
+#Coordinates 
+Forest_Coordinates <- as.data.frame(Coordiantes[c(1:6),])
+Forest_Interior_Edge_Coordinates <- as.data.frame(Coordiantes[c(7:12),])
+Forest_Exterior_Edge_Coordinates <- as.data.frame(Coordiantes[c(13:18),])
+Pioneer_Near_Coordinates <- as.data.frame(Coordiantes[c(19:24),])
+Pioneer_Far_Coordinates <- as.data.frame(Coordiantes[c(25:30),])
+Grass_Near_Coordinates <- as.data.frame(Coordiantes[c(31:36),])
+Grass_Far_Cooordiantes <- as.data.frame(Coordiantes[c(37:41),])
+
+#Convert each dataframe to object of class distance 
+#Community - use vegdist, bray method
+Community_Whole_Dist <- vegdist(Community)
+Forest_Community_Dist <- vegdist(Forest_Community)
+Forest_Interior_Edge_Community_Dist <- vegdist(Forest_Interior_Edge_Community)
+Forest_Exterior_Edge_Community_Dist <- vegdist(Forest_Exterior_Edge_Community)
+Pioneer_Near_Community_Dist <- vegdist(Pioneer_Near_Community)
+Pioneer_Far_Community_Dist <- vegdist(Pioneer_Far_Community)
+Grass_Near_Community_Dist <- vegdist(Grass_Near_Community)
+Grass_Far_Community_Dist <- vegdist(Grass_Far_Community)
+
+#Guild - us evegdist, bray method 
+Guilds_Whole_Dist <- vegdist(Guild)
+Forest_Guilds_Dist <- vegdist(Forest_Guilds)
+Forest_Interior_Edge_Guilds_Dist <- vegdist(Forest_Interior_Edge_Guilds)
+Forest_Exterior_Edge_Guilds_Dist <- vegdist(Forest_Exterior_Edge_Guilds)
+Pioneer_Near_Guilds_Dist <- vegdist((Pioneer_Near_Guilds))
+Pioneer_Far_Guilds_Dist <- vegdist(Pioneer_Far_Guilds)
+Grass_Near_Guilds_Dist <- vegdist(Grass_Near_Guilds)
+Grass_Far_Guilds_Dist<- vegdist(Grass_Far_Guilds)
+
+#Coordinates - use function dist from ade4 package, euclidean distances 
+Coordiantes_Whole_Dist <- dist(Coordiantes)
+Forest_Coordinates_Dist <- dist(Forest_Coordinates)
+Forest_Interior_Edge_Coordinates_Dist <- dist(Forest_Interior_Edge_Coordinates)
+Forest_Exterior_Edge_Coordinates_Dist <- dist(Forest_Exterior_Edge_Coordinates)
+Pioneer_Near_Coordinates_Dist <- dist(Pioneer_Near_Coordinates)
+Pioneer_Far_Coordinates_Dist <- dist(Pioneer_Far_Coordinates)
+Grass_Near_Coordinates_Dist <- dist(Grass_Near_Coordinates)
+Grass_Far_Cooordiantes_Dist <- dist(Grass_Far_Cooordiantes)
+
+#Assess the correlation between each community/guild and their coordinates 
+#Community
+Whole_Community_Vs_Coordiantes <- mantel.rtest(Community_Whole_Dist, Coordiantes_Whole_Dist, nrepet = 10000)
+Forest_Community_vs_Coordinates <- mantel.rtest(Forest_Community_Dist, Forest_Coordinates_Dist, nrepet = 10000)
+Forest_Interior_Edge_Community_vs_Coordiantes <- mantel.rtest(Forest_Interior_Edge_Community_Dist, Forest_Exterior_Edge_Coordinates_Dist, nrepet = 10000)
+Forest_Exterior_Edge_Community_vs_Coordinates <- mantel.rtest(Forest_Exterior_Edge_Community_Dist, Forest_Interior_Edge_Coordinates_Dist, nrepet = 10000)
+Pioneer_Near_Community_vs_Coordinates <- mantel.rtest(Pioneer_Near_Community_Dist, Pioneer_Near_Coordinates_Dist, nrepet = 10000)
+Pioneer_Far_Community_vs_Coordiantes <- mantel.rtest(Pioneer_Far_Community_Dist, Pioneer_Far_Coordinates_Dist, nrepet = 10000)
+Grass_Near_Community_vs_Coordiantes <- mantel.rtest(Grass_Near_Community_Dist, Grass_Near_Coordinates_Dist, nrepet = 10000)
+Grass_Far_Community_vs_Coordinates <- mantel.rtest(Grass_Far_Community_Dist, Grass_Far_Cooordiantes_Dist, nrepet = 10000)
+
+#Guilds 
+Guilds_Whole_Vs_Coordiantes <- mantel.rtest(Guilds_Whole_Dist, Coordiantes_Whole_Dist, nrepet = 10000)
+Forest_Guilds_vs_Coordinates <- mantel.rtest(Forest_Guilds_Dist, Forest_Coordinates_Dist, nrepet = 10000)
+Forest_Interior_Edge_Guilds_vs_Coordiantes <- mantel.rtest(Forest_Interior_Edge_Guilds_Dist, Forest_Exterior_Edge_Coordinates_Dist, nrepet = 10000)
+Forest_Exterior_Edge_Guilds_vs_Coordinates <- mantel.rtest(Forest_Exterior_Edge_Guilds_Dist, Forest_Interior_Edge_Coordinates_Dist, nrepet = 10000)
+Pioneer_Near_Guilds_vs_Coordinates <- mantel.rtest(Pioneer_Near_Guilds_Dist, Pioneer_Near_Coordinates_Dist, nrepet = 10000)
+Pioneer_Far_Guilds_vs_Coordiantes <- mantel.rtest(Pioneer_Far_Guilds_Dist, Pioneer_Far_Coordinates_Dist, nrepet = 10000)
+Grass_Near_Guilds_vs_Coordiantes <- mantel.rtest(Grass_Near_Guilds_Dist, Grass_Near_Coordinates_Dist, nrepet = 10000)
+Grass_Far_Guilds_vs_Coordinates <- mantel.rtest(Grass_Far_Guilds_Dist, Grass_Far_Cooordiantes_Dist, nrepet = 10000)
+
+#Do the same for plot level data 
+#Import fungi community by plot data 
+Community_By_Plot <- read.csv("Cleaned Up Data/Community_Fungi_By_Plot.csv")
+Community_By_Plot <- as.data.frame(Community_By_Plot[,c(3:5138)], row.names = Community_By_Plot$Category)
+Community_By_Plot <- as.data.frame(Community_By_Plot[c(1,2,3,7,8,9,4,5,6,19,20,21,16,17,18,13,14,15,10,11,12,22,23,24),])
+
+#Break up into each transect 
+Forest_Community_by_Plot <- as.data.frame(Community_By_Plot[c(1:3),])
+FIE_Community_by_Plot <- as.data.frame(Community_By_Plot[c(4:6),])
+FEE_Community_by_Plot <- as.data.frame(Community_By_Plot[c(7:9),])
+PN_Community_by_Plot <- as.data.frame(Community_By_Plot[c(10:12),])
+PF_Community_by_Plot <- as.data.frame(Community_By_Plot[c(13:15),])
+GN_Community_by_Plot <- as.data.frame(Community_By_Plot[c(16:18),])
+GF_Community_by_Plot <- as.data.frame(Community_By_Plot[c(19:21),])
+
+
+#Import Plot coordinates
+Plot_Coordinates <- read.csv("Raw_Data/Plot_Coordinates_MC.csv")
+Plot_Coordinates <- as.data.frame(Plot_Coordinates[,c(3,4)], row.names = Plot_Coordinates$Plot)
+#Break up into each transect 
+Forest_Coordinates_by_Plot <- as.data.frame(Plot_Coordinates[c(1:3),])
+FIE_Coordinates_by_Plot <- as.data.frame(Plot_Coordinates[c(4:6),])
+FEE_Coordinates_by_Plot <- as.data.frame(Plot_Coordinates[c(7:9),])
+PN_Coordiantes_by_Plot <- as.data.frame(Plot_Coordinates[c(10:12),])
+PF_Coordinates_by_Plot <- as.data.frame(Plot_Coordinates[c(13:15),])
+GN_Coordinates_by_Plot <- as.data.frame(Plot_Coordinates[c(16:18),])
+GF_Coordinates_by_Plot <- as.data.frame(Plot_Coordinates[c(19:21),])
+
+#Import Guild By Plot and tidy up
+Guild_By_Plot <- read.csv("Cleaned Up Data/Guild_Data_by_Plot.csv")
+Guild_By_Plot <- as.data.frame(Guild_By_Plot[,c(2:7)], row.names = Guild_By_Plot$Group.1)
+Guild_By_Plot$Group.1 <- NULL
+#Break up into eahc transect, excluding UMNR 
+Forest_Guilds_by_Plot <- as.data.frame(Guild_By_Plot[c(1:3),])
+FIE_Guilds_by_Plot <- as.data.frame(Guild_By_Plot[c(4:6),])
+FEE_Guilds_by_Plot <- as.data.frame(Guild_By_Plot[c(7:9),])
+PN_Guilds_by_Plot <- as.data.frame(Guild_By_Plot[c(10:12),])
+PF_Guilds_by_Plot <- as.data.frame(Guild_By_Plot[c(13:15),])
+GN_Guilds_by_Plot <- as.data.frame(Guild_By_Plot[c(16:18),])
+GF_Guilds_by_Plot <- as.data.frame(Guild_By_Plot[c(19:21),])
+
+#Convert each dataframe to an object of class distance 
+#Community 
+Forest_Community_by_Plot_Dist <- vegdist(Forest_Community_by_Plot)
+FIE_Community_by_Plot_Dist <- vegdist(FIE_Community_by_Plot)
+FEE_Community_by_Plot_Dist <- vegdist(FEE_Community_by_Plot)
+PN_Community_by_Plot_Dist <- vegdist(PN_Community_by_Plot)
+PF_Community_by_Plot_Dist <- vegdist(PF_Community_by_Plot)
+GN_Community_by_Plot_Dist <- vegdist(GN_Community_by_Plot)
+GF_Community_by_Plot_Dist <- vegdist(GF_Community_by_Plot)
+
+#Guild 
+Forest_Guilds_by_Plot_Dist <- vegdist(Forest_Guilds_by_Plot)
+FIE_Guilds_by_Plot_Dist <- vegdist(FIE_Guilds_by_Plot)
+FEE_Guilds_by_Plot_Dist <- vegdist(FEE_Guilds_by_Plot)
+PN_Guilds_by_Plot_Dist <- vegdist(PN_Guilds_by_Plot)
+PF_Guilds_by_Plot_Dist <- vegdist(PF_Guilds_by_Plot)
+GN_Guilds_by_Plot_Dist <- vegdist(GN_Guilds_by_Plot)
+GF_Guilds_by_Plot_Dist <- vegdist(GF_Guilds_by_Plot)
+
+#Coordinates - use dist function from ade4
+Forest_Coordinates_by_Plot_Dist <- dist(Forest_Coordinates_by_Plot)
+FIE_Coordinates_by_Plot_Dist <- dist(FIE_Coordinates_by_Plot)
+FEE_Coordinates_by_Plot_Dist <- dist(FEE_Coordinates_by_Plot)
+PN_Coordinates_by_Plot_Dist <- dist(PN_Coordiantes_by_Plot)
+PF_Coordinates_by_Plot_Dist <- dist(PF_Coordinates_by_Plot)
+GN_Coordinates_by_Plot_Dist <- dist(GN_Coordinates_by_Plot)
+GF_Coordinates_by_Plot_Dist <- dist(GF_Coordinates_by_Plot)
+
+#Mantel test community vs coordinates 
+Forest_by_plot_community_vs_coordinates <- mantel.rtest(Forest_Community_by_Plot_Dist, Forest_Coordinates_by_Plot_Dist, nrepet = 10000)
+FIE_by_plot_community_vs_coordinates <- mantel.rtest(FIE_Community_by_Plot_Dist, FIE_Coordinates_by_Plot_Dist, nrepet = 10000)
+FEE_by_plot_community_vs_coordinates <- mantel.rtest(FEE_Community_by_Plot_Dist, FEE_Coordinates_by_Plot_Dist, nrepet = 10000)
+PN_by_plot_community_vs_coordinates <- mantel.rtest(PN_Community_by_Plot_Dist, PN_Coordinates_by_Plot_Dist, nrepet = 10000)
+PF_by_plot_community_vs_coordinates <- mantel.rtest(PF_Community_by_Plot_Dist, PF_Coordinates_by_Plot_Dist, nrepet = 10000)
+GN_by_plot_community_vs_coordinates <- mantel.rtest(GN_Community_by_Plot_Dist, GN_Coordinates_by_Plot_Dist, nrepet = 10000)
+GF_by_plot_community_vs_coordinates <- mantel.rtest(GF_Community_by_Plot_Dist, GF_Coordinates_by_Plot_Dist, nrepet = 10000)
+
+#Mantel test guild vs coordinate
+Forest_by_plot_guilds_vs_coordinates <- mantel.rtest(Forest_Guilds_by_Plot_Dist, Forest_Coordinates_by_Plot_Dist, nrepet = 10000)
+FIE_by_plot_guilds_vs_coordinates <- mantel.rtest(FIE_Guilds_by_Plot_Dist, FIE_Coordinates_by_Plot_Dist, nrepet = 10000)
+FEE_by_plot_guilds_vs_coordinates <- mantel.rtest(FEE_Guilds_by_Plot_Dist, FEE_Coordinates_by_Plot_Dist, nrepet = 10000)
+PN_by_plot_guilds_vs_coordinates <- mantel.rtest(PN_Guilds_by_Plot_Dist, PN_Coordinates_by_Plot_Dist, nrepet = 10000)
+PF_by_plot_guilds_vs_coordinates <- mantel.rtest(PF_Guilds_by_Plot_Dist, PF_Coordinates_by_Plot_Dist, nrepet = 10000)
+GN_by_plot_guilds_vs_coordinates <- mantel.rtest(GN_Guilds_by_Plot_Dist, GN_Coordinates_by_Plot_Dist, nrepet = 10000)
+GF_by_plot_guilds_vs_coordinates <- mantel.rtest(GF_Guilds_by_Plot_Dist, GF_Coordinates_by_Plot_Dist, nrepet = 10000)
+
+#Mixed effects models 
+#Join each transect coordinate data frame and each guild data frame together 
+Forest_Guild_Coordinates <- cbind(Forest_Guilds, Forest_Coordinates)
+#Add plot column 
+Plot <- c("Forest_1", "Forest_1", "Forest_2", "Forest_2", "Forest_3", "Forest_3")
+Forest_Guild_Coordinates <- cbind(Forest_Community_Coordinates, Plot)
+#Mixed effect model
+Forest_Guild_Space <- lmer()
+

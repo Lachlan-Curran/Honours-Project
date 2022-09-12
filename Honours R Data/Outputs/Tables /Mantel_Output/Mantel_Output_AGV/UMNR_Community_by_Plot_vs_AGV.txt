@@ -1,0 +1,8 @@
+"V1"
+"obs" -0.620965925596221
+"alter" greater
+"rep" 100000
+"expvar" c(Std.Obs = -0.873853680251436, Expectation = -0.00289113523714164, Variance = 0.500270185647537)
+"pvalue" 0.832351676483235
+"plot" list(hist = list(breaks = c(-1, -0.8, -0.6, -0.4, -0.2, 0, 0.2, 0.4, 0.6, 0.8, 1), counts = c(16765, 16731, 0, 16738, 0, 0, 16543, 0, 16629, 16594), density = c(0.83825, 0.83655, 0, 0.8369, 0, 0, 0.82715, 0, 0.83145, 0.8297), mids = c(-0.9, -0.7, -0.5, -0.3, -0.1, 0.1, 0.3, 0.5, 0.7, 0.9), xname = "sim", equidist = TRUE), xlim = c(-1.0707296622255, 1.10000344291393))
+"call" mantel.rtest(m1 = UMNR_Community_Dist, m2 = AGV_Dist_UMNR, nrepet = 1e+05)
