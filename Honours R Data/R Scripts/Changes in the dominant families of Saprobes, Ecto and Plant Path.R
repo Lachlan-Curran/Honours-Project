@@ -237,5 +237,3 @@ ggplot(data = Pathogen) +
   labs(x = "", y = "(log(Abundance)") + scale_fill_manual(values = my_colours)
 
 
-
-
