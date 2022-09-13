@@ -9,6 +9,8 @@ library(vegan)
 library(tidyverse)
 library(ggplot2)
 library(FUNGuildR)#this package assigns functional groups to taxa
+library(caret)
+
 
 biom <- read_biom("Raw_Data/ACE_Data_Maleny/qiime_feature_table/feature-table.biom") # Import your BIOM file
 summary(biom) #summaries the data stored in object as list
@@ -29,6 +31,8 @@ Full_Taxa <- Full_Taxa %>% rename("Pioneer Far A1" = SE4626_J4816, "Pioneer Far 
 Full_Taxa <- Full_Taxa %>% rename("Grass Near A1" = SE4632_J4816, "Grass Near A2" = SE4633_J4816, "Grass Near B1" = SE4634_J4816, "Grass Near B2" = SE4635_J4816, "Grass Near C1" = SE4636_J4816,"Grass Near C2" = SE4637_J4816)
 Full_Taxa <- Full_Taxa %>% rename("UMNR A1" = SE4638_J4816, "UMNR A2" = SE4639_J4816, "UMNR B1" = SE4640_J4816, "UMNR B2" = SE4641_J4816, "UMNR C1" = SE4642_J4816,"UMNR C2" = SE4643_J4816)
 Full_Taxa <- Full_Taxa %>% rename("Grass Far A2" = SE4644_J4816, "Grass Far  B1" = SE4645_J4816, "Grass Far  B2" = SE4646_J4816, "Grass Far C1 " = SE4647_J4816, "Grass Far C2" = SE4648_J4816)
+#normalize data 
+
 
 #Import taxa info for row names
 taxa_ID <- read_tsv("Raw_Data/ACE_Data_Maleny/qiime_taxonomy/taxonomy.tsv")
@@ -46,6 +50,12 @@ TAXA <- as.data.frame(taxa[,c(2:48)], row.names = taxa$Taxon)
 #Transpose and save
 Fungi_by_Sample <- t(TAXA)
 Fungi_by_Sample <- as.data.frame(Fungi_by_Sample)
+
+#Find min species count per row 
+raremax <- min(rowSums(Fungi_by_Sample))
+#rarefy to that minimum value 
+Fungi_by_Sample <- rrarefy(Fungi_by_Sample, raremax)
+Fungi_by_Sample <- as.data.frame(Fungi_by_Sample)
 write.csv(Fungi_by_Sample, file = "Cleaned Up Data/Fungi_by_Sample.csv")
 #Aggregate to plot level 
 Plot <- c(rep("Forest_1",2), rep("Forest_2",2),rep("Forest_3",2), rep("Forest_Edge_Interior_1",2), rep("Forest_Edge_Interior_2",2), rep("Forest_Edge_Interior_3",2), rep("Forest_Edge_Exterior_1",2), rep("Forest_Edge_Exterior_2",2), rep("Forest_Edge_Exterior_3",2), rep("Pioneer_Near_1", 2), rep("Pioneer_Near_2", 2), rep("Pioneer_Near_3", 2), rep("Pioneer_Far_1", 2),rep("Pioneer_Far_2", 2), rep("Pioneer_Far_3", 2), rep("Grass_Near_1",2),rep("Grass_Near_2",2), rep("Grass_Near_3",2), rep("UMNR_1",2),  rep("UMNR_2",2),  rep("UMNR_3",2), rep("Grass_Far_1",1), rep("Grass_Far_2",2), rep("Grass_Far_3",2))
@@ -57,6 +67,7 @@ Fungi_by_Plot <- aggregate(Fungi_by_Sample, by = Plot, FUN = sum)
 Fungi_by_Plot <- as.data.frame(Fungi_by_Plot[c(1,2,3,7,8,9,4,5,6,19,20,21,16,17,18,13,14,15,10,11,12,22,23,24),])
 Fungi_by_Plot <- as.data.frame(Fungi_by_Plot[,c(2:5138)], row.names = Fungi_by_Plot$Group.1)
 #Save File 
+
 write.csv(Fungi_by_Plot, file = "Cleaned Up Data/Community_Fungi_By_Plot.csv")
 
 #nmds analysis - This will take time

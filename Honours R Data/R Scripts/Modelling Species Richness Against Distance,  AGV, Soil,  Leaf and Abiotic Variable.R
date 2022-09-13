@@ -230,7 +230,7 @@ legend("right", legend = c("Forest", "Forest Edge Interior", "Forest Edge Exteri
 #Repeat for ABIOTIC variables 
 #Import Abiotic 
 Abiotic <- read.csv("Cleaned Up Data/Abiotc_Variables_MC.csv")
-Abiotic <- as.data.frame(Abiotic[,c(3:5)], row.names = Abiotic$X)
+Abiotic <- as.data.frame(Abiotic[,c(3:4)], row.names = Abiotic$X)
 #Perform PCA 
 Abiotic_PCA <- princomp(Abiotic)
 #Check the components
@@ -244,7 +244,7 @@ dev.off()
 #extract the scores
 Abiotic_PCA_Scores <- as.data.frame(Abiotic_PCA$scores)
 #rename first column 
-colnames(Abiotic_PCA_Scores) <- c("ABIOTIC_COMP1", "ABIOTIC_COMP2", "ABIOTIC_COMP3") 
+colnames(Abiotic_PCA_Scores) <- c("ABIOTIC_COMP1", "ABIOTIC_COMP2") 
 #Join AGV_COMP1 and 2 to Community_by_Plot data frame 
 Community_by_Plot$ABIOTIC_COMP1 <- Abiotic_PCA_Scores$ABIOTIC_COMP1
 Community_by_Plot$ABIOTIC_COMP2 <- Abiotic_PCA_Scores$ABIOTIC_COMP2

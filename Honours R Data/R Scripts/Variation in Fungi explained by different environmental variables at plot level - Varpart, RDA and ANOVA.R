@@ -232,6 +232,7 @@ anova(Leaf_Comm_Rda)
 Distance_Comm_Rda <- rda(decostand(Fungi_by_Plot_MC, method = 'log'), Distance)
 anova(Distance_Comm_Rda)
 
+
 #Guild 
 #AGV
 AGV_Guild_Rda <- rda(decostand(Guilds_MC, method = 'log'), AGV_Data)

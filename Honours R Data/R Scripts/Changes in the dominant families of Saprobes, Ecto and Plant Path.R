@@ -49,7 +49,7 @@ Taxa_Saprobe <- as.data.frame(Taxa_Saprobe)
 #Reorder Rows 
 Taxa_Saprobe <- as.data.frame(Taxa_Saprobe[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47,37,38,39,40,41,42),])
 #Add Transect Data 
-Transect <- c(rep("Forest", 6), rep("Forest_Edge_Interior", 6), rep("Forest_Edge_Exterior", 6), rep("Pioneer_Near", 6), rep("Pioneer_Far", 6), rep("Grass_Near", 6), rep("Grass_Far", 5), rep("UMNR", 6))
+Transect <- c(rep("Forest", 6), rep("Forest Edge Interior", 6), rep("Forest Edge Exterior", 6), rep("Pioneer Near", 6), rep("Pioneer Far", 6), rep("Grass Near", 6), rep("Grass Far", 5), rep("UMNR", 6))
 Taxa_Saprobe$Transect <- Transect
 #Make Transect rows and delete column
 Taxa_Saprobe <- as.data.frame(Taxa_Saprobe[,c(1:1161),])
@@ -75,7 +75,7 @@ Taxa_Ecto <- as.data.frame(Taxa_Ecto)
 #Reorder Rows 
 Taxa_Ecto<- as.data.frame(Taxa_Ecto[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47,37,38,39,40,41,42),])
 #Add Transect Data 
-Transect <- c(rep("Forest", 6), rep("Forest_Edge_Interior", 6), rep("Forest_Edge_Exterior", 6), rep("Pioneer_Near", 6), rep("Pioneer_Far", 6), rep("Grass_Near", 6), rep("Grass_Far", 5), rep("UMNR", 6))
+Transect <- c(rep("Forest", 6), rep("Forest Edge Interior", 6), rep("Forest Edge Exterior", 6), rep("Pioneer Near", 6), rep("Pioneer Far", 6), rep("Grass Near", 6), rep("Grass Far", 5), rep("UMNR", 6))
 Taxa_Ecto$Transect <- Transect
 #Make Transect rows and delete column
 Taxa_Ecto <- as.data.frame(Taxa_Ecto[,c(1:114),])
@@ -101,7 +101,7 @@ Taxa_Endo <- as.data.frame(Taxa_Endo)
 #Reorder Rows 
 Taxa_Endo<- as.data.frame(Taxa_Endo[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47,37,38,39,40,41,42),])
 #Add Transect Data 
-Transect <- c(rep("Forest", 6), rep("Forest_Edge_Interior", 6), rep("Forest_Edge_Exterior", 6), rep("Pioneer_Near", 6), rep("Pioneer_Far", 6), rep("Grass_Near", 6), rep("Grass_Far", 5), rep("UMNR", 6))
+Transect <- c(rep("Forest", 6), rep("Forest Edge Interior", 6), rep("Forest Edge Exterior", 6), rep("Pioneer Near", 6), rep("Pioneer Far", 6), rep("Grass Near", 6), rep("Grass Far", 5), rep("UMNR", 6))
 Taxa_Endo$Transect <- Transect
 #Make Transect rows and delete column
 Taxa_Endo <- as.data.frame(Taxa_Endo[,c(1:191),])
@@ -128,7 +128,7 @@ Taxa_Path <- as.data.frame(Taxa_Path)
 #Reorder Rows 
 Taxa_Path<- as.data.frame(Taxa_Path[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47,37,38,39,40,41,42),])
 #Add Transect Data 
-Transect <- c(rep("Forest", 6), rep("Forest_Edge_Interior", 6), rep("Forest_Edge_Exterior", 6), rep("Pioneer_Near", 6), rep("Pioneer_Far", 6), rep("Grass_Near", 6), rep("Grass_Far", 5), rep("UMNR", 6))
+Transect <- c(rep("Forest", 6), rep("Forest Edge Interior", 6), rep("Forest Edge Exterior", 6), rep("Pioneer Near", 6), rep("Pioneer Far", 6), rep("Grass Near", 6), rep("Grass Far", 5), rep("UMNR", 6))
 Taxa_Path$Transect <- Transect
 #Make Transect rows and delete column
 Taxa_Path <- as.data.frame(Taxa_Path[,c(1:242),])
@@ -145,7 +145,7 @@ Taxa_Path_Transect <- as.data.frame(Taxa_Path_Transect)
 #Add a taxa column 
 Taxa_Path_Transect$TAXA <- rownames(Taxa_Path_Transect)
 
-#Create a dataframe that contains columns of habiotat, count, family and otu data 
+#Create a dataframe that contains columns of habitat, count, family and otu data 
 #Saprobe 
 Saprobe <- Taxa_Saprobe_Transect %>%
   select(-UMNR) %>% 
@@ -168,10 +168,10 @@ Saprobe$Count_Transformed <- log(Saprobe$Count)
 ggplot(data = Saprobe) +
   geom_bar(aes(x = level_order, y = Count_Transformed, fill = Family), stat = "identity") +
   facet_wrap(~ factor(Habitat, levels = c(
-    "Grass_Near", "Grass_Far", "Pioneer_Near", "Pioneer_Far", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Forest")), 
-    scales="free_x", ncol = 2) +
+    "Grass Near", "Grass Far", "Pioneer Near", "Pioneer Far", "Forest Edge Interior", "Forest Edge Exterior", "Forest")), 
+    scales="free_x", ncol = 2, strip.position = "bottom") +
   theme_classic() +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank()) +
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank(), strip.placement = "outside") +
   labs(x = "", y = "log(Abundance)") + scale_fill_manual(values = my_colours)
 
 
@@ -197,10 +197,10 @@ View()
 ggplot(data = Ecto) +
   geom_bar(aes(x = level_order, y = Count_Transformed, fill = Family), stat = "identity") +
   facet_wrap(~ factor(Habitat, levels = c(
-    "Grass_Near", "Grass_Far", "Pioneer_Near", "Pioneer_Far", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Forest")), 
-    scales="free_x", ncol = 2) +
+    "Grass Near", "Grass Far", "Pioneer Near", "Pioneer Far", "Forest Edge_Interior", "Forest Edge_Exterior", "Forest")), 
+    scales="free_x", ncol = 2, strip.position = "bottom") +
   theme_classic() +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank()) +
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank(), strip.placement = "outside") +
   labs(x = "", y = "log(Abundance)") + scale_fill_manual(values = my_colours)
 
 
@@ -230,10 +230,10 @@ Pathogen$Count_Transformed <- log(Pathogen$Count)
 ggplot(data = Pathogen) +
   geom_bar(aes(x = level_order, y = Count_Transformed, fill = Family), stat = "identity") +
   facet_wrap(~ factor(Habitat, levels = c(
-    "Grass_Near", "Grass_Far", "Pioneer_Near", "Pioneer_Far", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Forest")), 
-    scales="free_x", ncol = 2) +
+    "Grass Near", "Grass Far", "Pioneer Near", "Pioneer Far", "Forest Edge Interior", "Forest Edge Exterior", "Forest")), 
+    scales="free_x", ncol = 2, strip.position = "bottom") +
   theme_classic() +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank()) +
+  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank(), strip.placement = "outside") +
   labs(x = "", y = "(log(Abundance)") + scale_fill_manual(values = my_colours)
 
 
