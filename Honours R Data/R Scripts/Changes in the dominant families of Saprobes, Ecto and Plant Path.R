@@ -27,6 +27,8 @@ Guilds <- as.data.frame(Guilds[,c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,1
 Guilds$TAXA <- rownames(Guilds)
 
 
+
+
 #We now want to assign each taxa into a broad guild: Saprobe, Endo/Ectomycorrhizae and Plant Path, we will igonore all others
 #Take a subset of the data where the letters Saprobe appear in the guilds column
 Taxa_Saprobe <- as.data.frame(Guilds[grep("Sapro", Guilds$guild),])
@@ -156,12 +158,13 @@ Saprobe <- Taxa_Saprobe_Transect %>%
   ungroup() %>% 
   pivot_longer(cols = 1:7, names_to = "Habitat", values_to = "Count") %>% 
   group_by(Habitat) %>% 
-  top_n(wt = Count, n = 10) %>% 
+  top_n(wt = Count, n = 5) %>% 
   mutate(OTU_Name = paste0(Family, "_", OTU_Number)) %>% 
   arrange(desc(Count)) %>% 
   group_by(Habitat) %>% 
-  mutate(level_order = row_number())
+  mutate(level_order = row_number()) %>% 
 View()
+
 #transform the count data so the extreme values are less tricky to visualize 
 Saprobe$Count_Transformed <- log(Saprobe$Count)
 
@@ -185,7 +188,7 @@ Ecto <- Taxa_Ecto_Transect %>%
   ungroup() %>% 
   pivot_longer(cols = 1:7, names_to = "Habitat", values_to = "Count") %>% 
   group_by(Habitat) %>% 
-  top_n(wt = Count, n = 10) %>% 
+  top_n(wt = Count, n = 5) %>% 
   mutate(OTU_Name = paste0(Family, "_", OTU_Number)) %>% 
   arrange(desc(Count)) %>% 
   group_by(Habitat) %>% 
@@ -197,7 +200,7 @@ View()
 ggplot(data = Ecto) +
   geom_bar(aes(x = level_order, y = Count_Transformed, fill = Family), stat = "identity") +
   facet_wrap(~ factor(Habitat, levels = c(
-    "Grass Near", "Grass Far", "Pioneer Near", "Pioneer Far", "Forest Edge_Interior", "Forest Edge_Exterior", "Forest")), 
+    "Grass Near", "Grass Far", "Pioneer Near", "Pioneer Far", "Forest Edge Interior", "Forest Edge Exterior", "Forest")), 
     scales="free_x", ncol = 2, strip.position = "bottom") +
   theme_classic() +
   theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank(), strip.placement = "outside") +
@@ -219,7 +222,7 @@ Pathogen <- Taxa_Path_Transect %>%
   ungroup() %>% 
   pivot_longer(cols = 1:7, names_to = "Habitat", values_to = "Count") %>% 
   group_by(Habitat) %>% 
-  top_n(wt = Count, n = 10) %>% 
+  top_n(wt = Count, n = 5) %>% 
   mutate(OTU_Name = paste0(Family, "_", OTU_Number)) %>% 
   arrange(desc(Count)) %>% 
   group_by(Habitat) %>% 

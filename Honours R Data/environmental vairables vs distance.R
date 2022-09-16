@@ -12,7 +12,7 @@ Distance <-read.csv("Raw_Data/Plot_Coordinates_MC.csv")
 AGV <- read.csv("Cleaned Up Data/AGV_Data.csv")
 #convert first column to row names and remove rows containing UMNR data - this is an outgroup 
 AGV <- as.data.frame(AGV, row.names = AGV$X)
-AGV <- as.data.frame(AGV[c(1:21),c(2:5)])
+AGV <- as.data.frame(AGV[c(1:21),c(2:4)])
 #Perform a PCA 
 AGV_PCA <- princomp(AGV, cor = TRUE)
 #Plot PCA 
@@ -33,10 +33,18 @@ colnames(AGV_PCA_Scores)[2] <- "DBH_vs_Other_Herb"
 AGV_PCA_Scores$Plot <- Distance$Plot
 Distance_AGV <- left_join(Distance, AGV_PCA_Scores, by = "Plot")
 
+#define colours
+my_colours <- c("#009E73", "#E69500", "#D55E00", "#56B4E9", "#0072B2",  "#CC6677","#AA4499", "#999999")
+#define level order
+levels <- factor(c("Forest", "Forest Edge Interior", "Forest Edge Exterior", "Pioneer Near", "Pioneer Far", "Grass Near", "Grass Far"))
+
 #Plot each component against distance from forest edge 
-Woody_Grass <- ggplot(data = Distance_AGV, aes(x = Distance_From_Edge, y = Woody_Richness_vs_Grass_Cover, col = Transect, cex = 3)) + geom_point()
+Woody_Grass <- ggplot(data = Distance_AGV, aes(x = Distance_From_Edge, y = Woody_Richness_vs_Grass_Cover, col = Transect, cex = 3 )) + geom_point() + scale_colour_manual(values = my_colours)
 plot(Woody_Grass)
-DBH_Herb <- Woody_Grass <- ggplot(data = Distance_AGV, aes(x = Distance_From_Edge, y =DBH_vs_Other_Herb, col = Transect, cex = 3)) + geom_point()
+
+Woody_Grass_Boxplot <- ggplot(data = Distance_AGV, aes(x = Transect, y = Woody_Richness_vs_Grass_Cover, fill = Transect)) + geom_boxplot()  + scale_fill_manual(values = my_colours)
+
+ Woody_Grass <- ggplot(data = Distance_AGV, aes(x = Distance_From_Edge, y =DBH_vs_Other_Herb, col = Transect, cex = 3)) + geom_point() + scale_colour_manual(values = my_colours)
 plot(DBH_Herb)
 
 pdf(file = "Outputs/Figures/AGV_Distance.pdf")

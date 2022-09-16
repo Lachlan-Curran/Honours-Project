@@ -111,21 +111,27 @@ colnames(taxa)[1] <- "Taxonomy"
 Guild_Taxa <- funguild_assign(taxa)
 #We only want taxa whose tropic guild confidence ranking is at least probable, so we need to remove all rows with NAs or possible confidence ratings 
 Guild_Taxa <- na.omit(Guild_Taxa)
-Guild_Taxa <- Guild_Taxa[- grep("Possible", Guild_Taxa$confidenceRanking),]
 #We now want to remove all unnecessary columns, we are only interested in the counts per sample, and the guild ID 
-Guild_Taxa <- Guild_Taxa[,c(2:54)]
-Guild_Taxa <- Guild_Taxa[,-c(48:52)]
+Guild_Taxa <- Guild_Taxa[,-c(56:59)]
+Guild_Taxa <- Guild_Taxa[,-c(49:53)]
+Guild_Taxa <- Guild_Taxa[ -grep("Possible", Guild_Taxa$confidenceRanking),]
+#Remove confidence ranking 
+Guild_Taxa <- Guild_Taxa[,-c(50)]
+#Save this file 
+write.csv(Guild_Taxa, file = "Cleaned Up Data/Guild_Taxa_ID.csv")
 #Aggregate guild count so we only 1 have unique guild per row - calculate the sum of each 
 #Assign guild as a list 
 guild <- list(Guild_Taxa$guild)
 #assign guild as row names 
-Guild_Taxa <- as.data.frame(Guild_Taxa[,c(1:47)], row.names = Guild_Taxa$guild)
+Guild_Taxa <- as.data.frame(Guild_Taxa[,c(2:48)], row.names = Guild_Taxa$guild)
 #aggregate
 Guild_Taxa <- aggregate(Guild_Taxa, by = guild, FUN = sum)
 #re-assign guilds as row names
 Guild_Taxa <- as.data.frame(Guild_Taxa[,c(2:48)], row.names = Guild_Taxa$Group.1)
 #transpose data frame 
 Guild_Taxa <- t(Guild_Taxa)
+#convert back to dataframe 
+Guild_Taxa <- as.data.frame(Guild_Taxa)
 #re-order the rows so UMNR is last 
 Guild_Taxa <- as.data.frame(Guild_Taxa[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47,37,38,39,40,41,42),])
 #save this as Guild_Aggregated 
