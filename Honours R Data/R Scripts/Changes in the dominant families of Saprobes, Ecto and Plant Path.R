@@ -162,8 +162,10 @@ Saprobe <- Taxa_Saprobe_Transect %>%
   mutate(OTU_Name = paste0(Family, "_", OTU_Number)) %>% 
   arrange(desc(Count)) %>% 
   group_by(Habitat) %>% 
-  mutate(level_order = row_number()) %>% 
+  mutate(level_order = row_number())
 View()
+#Add a new coloumn containing guild info 
+Saprobe <- merge(Saprobe, Guilds, by = "TAXA")
 
 #transform the count data so the extreme values are less tricky to visualize 
 Saprobe$Count_Transformed <- log(Saprobe$Count)

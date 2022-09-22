@@ -1,48 +1,48 @@
 "","Saprobe_Abundance","Endomycorrhizae","Ectomycorrhizae_Abundance","Plant_Pathogen_Abundance","Other_Abundance"
-"Forest A1",2252,0,67,462,762
-"Forest A2",2160,2,110,350,564
-"Forest B1",1912,55,41,182,471
-"Forest B2",1831,24,81,234,403
-"Forest C1",2625,134,83,232,411
-"Forest C2",3153,22,112,346,633
-"Forest Interior A1",2535,11,1140,555,2103
-"Forest Interior A2",2104,40,38,222,544
-"Forest Interior B1",2274,13,504,317,1052
-"Forest Interior B2",1881,11,27,299,645
-"Forest Interior C1",2204,44,118,612,766
-"Forest Interior C2",1440,15,40,316,485
-"Forest Exterior A1",1101,79,39,259,720
-"Forest Exterior A2",1847,22,36,260,1065
-"Forest Exterior B1",1975,182,26,259,1211
-"Forest Exterior B2",1050,13,17,165,818
-"Forest Exterior C1",2491,67,15,182,1768
-"Forest Exterior C2",3715,124,70,290,2355
-"Pioneer Near A1",1968,41,98,454,511
-"Pioneer Near A2",2724,18,68,607,713
-"Pioneer Near B1",793,150,33,233,476
-"Pioneer Near B2",936,202,21,334,682
-"Pioneer Near C1",2808,232,523,575,782
-"Pioneer Near C2",1910,76,41,323,371
-"Pioneer Far A1",3305,26,266,286,1147
-"Pioneer Far A2",3361,89,230,171,917
-"Pioneer Far B1",2809,35,838,245,569
-"Pioneer Far B2",2668,43,969,185,266
-"Pioneer Far C1",2764,69,707,114,641
-"Pioneer Far C2",2926,144,774,130,679
-"Grass Near A1",1761,171,66,209,1314
-"Grass Near A2",1803,51,188,257,1269
-"Grass Near B1",1110,56,496,360,1265
-"Grass Near B2",1913,123,67,136,1527
-"Grass Near C1",2205,86,93,169,1526
-"Grass Near C2",2339,65,22,178,1453
-"Grass Far A2",1181,88,83,106,779
-"Grass Far  B1",2043,59,414,126,624
-"Grass Far  B2",1489,101,32,381,980
-"Grass Far C1 ",1581,54,77,102,866
-"Grass Far C2",2406,72,1012,394,1950
-"UMNR A1",2226,60,388,336,782
-"UMNR A2",1804,4,292,102,485
-"UMNR B1",1772,7,509,81,602
-"UMNR B2",2326,47,664,106,298
-"UMNR C1",1854,24,118,122,487
-"UMNR C2",3710,31,497,189,1266
+"Forest A1",2252,0,67,393,762
+"Forest A2",2160,2,110,230,564
+"Forest B1",1912,55,41,101,471
+"Forest B2",1831,24,81,187,403
+"Forest C1",2625,134,83,184,411
+"Forest C2",3153,22,112,263,633
+"Forest Interior A1",2535,11,1140,453,2103
+"Forest Interior A2",2104,40,38,216,544
+"Forest Interior B1",2274,13,504,186,1052
+"Forest Interior B2",1881,11,27,216,645
+"Forest Interior C1",2204,44,118,426,766
+"Forest Interior C2",1440,15,40,255,485
+"Forest Exterior A1",1101,79,39,218,720
+"Forest Exterior A2",1847,22,36,408,1065
+"Forest Exterior B1",1975,182,26,199,1211
+"Forest Exterior B2",1050,13,17,94,818
+"Forest Exterior C1",2491,67,15,97,1768
+"Forest Exterior C2",3715,124,70,121,2355
+"Pioneer Near A1",1968,41,98,321,511
+"Pioneer Near A2",2724,18,68,482,713
+"Pioneer Near B1",793,150,33,200,476
+"Pioneer Near B2",936,202,21,288,682
+"Pioneer Near C1",2808,232,523,328,782
+"Pioneer Near C2",1910,76,41,254,371
+"Pioneer Far A1",3305,26,266,197,1147
+"Pioneer Far A2",3361,89,230,87,917
+"Pioneer Far B1",2809,35,838,188,569
+"Pioneer Far B2",2668,43,969,77,266
+"Pioneer Far C1",2764,69,707,29,641
+"Pioneer Far C2",2926,144,774,55,679
+"Grass Near A1",1761,171,66,122,1314
+"Grass Near A2",1803,51,188,173,1269
+"Grass Near B1",1110,56,496,300,1265
+"Grass Near B2",1913,123,67,115,1527
+"Grass Near C1",2205,86,93,406,1526
+"Grass Near C2",2339,65,22,217,1453
+"Grass Far A2",1181,88,83,71,779
+"Grass Far  B1",2043,59,414,128,624
+"Grass Far  B2",1489,101,32,400,980
+"Grass Far C1 ",1581,54,77,66,866
+"Grass Far C2",2406,72,1012,367,1950
+"UMNR A1",2226,60,388,284,782
+"UMNR A2",1804,4,292,103,485
+"UMNR B1",1772,7,509,57,602
+"UMNR B2",2326,47,664,146,298
+"UMNR C1",1854,24,118,106,487
+"UMNR C2",3710,31,497,130,1266

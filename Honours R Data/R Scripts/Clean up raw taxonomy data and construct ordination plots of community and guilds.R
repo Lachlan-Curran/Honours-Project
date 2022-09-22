@@ -31,7 +31,7 @@ Full_Taxa <- Full_Taxa %>% rename("Pioneer Far A1" = SE4626_J4816, "Pioneer Far 
 Full_Taxa <- Full_Taxa %>% rename("Grass Near A1" = SE4632_J4816, "Grass Near A2" = SE4633_J4816, "Grass Near B1" = SE4634_J4816, "Grass Near B2" = SE4635_J4816, "Grass Near C1" = SE4636_J4816,"Grass Near C2" = SE4637_J4816)
 Full_Taxa <- Full_Taxa %>% rename("UMNR A1" = SE4638_J4816, "UMNR A2" = SE4639_J4816, "UMNR B1" = SE4640_J4816, "UMNR B2" = SE4641_J4816, "UMNR C1" = SE4642_J4816,"UMNR C2" = SE4643_J4816)
 Full_Taxa <- Full_Taxa %>% rename("Grass Far A2" = SE4644_J4816, "Grass Far  B1" = SE4645_J4816, "Grass Far  B2" = SE4646_J4816, "Grass Far C1 " = SE4647_J4816, "Grass Far C2" = SE4648_J4816)
-#normalize data 
+
 
 
 #Import taxa info for row names
@@ -44,6 +44,7 @@ taxa_ID_no_consensus <- subset(taxa_ID[1:2])
 Taxa_ID_Count <- left_join(taxa_ID_no_consensus, Full_Taxa, by = "Feature ID")
 #drop ID Column 
 taxa <- as.data.frame(Taxa_ID_Count[,c(2:49)])
+
 #Make taxa rownames, remove feature ID column 
 TAXA <- as.data.frame(taxa[,c(2:48)], row.names = taxa$Taxon)
 
@@ -79,7 +80,7 @@ TAXA_nmds_species <- as.data.frame(TAXA_nmds$species) #the dataframe was in the 
 #reorder rows 
 TAXA_nmds_species <- as.data.frame(TAXA_nmds_species[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,43,44,45,46,47,37,38,39,40,41,42),])
 #Add a transect column to guild_nmds_species - we need this info to group the points 
-Transect <- c(rep("Forest", 6), rep("Forest_Edge_Interior", 6), rep("Forest_Edge_Exterior", 6), rep("Pioneer_Near", 6), rep("Pioneer_Far", 6), rep("Grass_Near", 6), rep("Grass_Far", 5),  rep("UMNR",6))
+Transect <- c(rep("Forest", 6), rep("Forest Edge Interior", 6), rep("Forest Edge Exterior", 6), rep("Pioneer Near", 6), rep("Pioneer Far", 6), rep("Grass Near", 6), rep("Grass Far", 5),  rep("UMNR",6))
 TAXA_nmds_species$Transect <- Transect
 #Add a sample column as well, need this info to group points 
 Sample <- c("A1", "A2", "B1", "B2", "C1", "C2","A1", "A2", "B1", "B2", "C1", "C2","A1", "A2", "B1", "B2", "C1", "C2","A1", "A2", "B1", "B2", "C1", "C2","A1", "A2", "B1", "B2", "C1", "C2","A1", "A2", "B1", "B2", "C1", "C2", "A2", "B1", "B2", "C1", "C2","A1", "A2", "B1", "B2", "C1", "C2")
@@ -91,7 +92,7 @@ ggplot(data = TAXA_nmds_species) + geom_point(aes(x =MDS1, y =MDS2))
 #Create Hull
 TAXA_nmds_species_hull <- TAXA_nmds_species %>% group_by(Transect) %>% slice(chull(MDS1,MDS2))
 #Reorder variables to stop ggplot from automatically plotting alphabetically 
-TAXA_nmds_species_hull$Transect <- factor(TAXA_nmds_species_hull$Transect, levels = c("Forest", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Pioneer_Near", "Pioneer_Far", "Grass_Near", "Grass_Far", "UMNR"))
+TAXA_nmds_species_hull$Transect <- factor(TAXA_nmds_species_hull$Transect, levels = c("Forest", "Forest Edge Interior", "Forest Edge Exterior", "Pioneer Near", "Pioneer Far", "Grass Near", "Grass Far", "UMNR"))
 
 #Create plot
 TAXA_NMDS <- ggplot() + geom_point(data = TAXA_nmds_species, aes(x = MDS1, y = MDS2,)) + geom_text(data = TAXA_nmds_species, aes(x = MDS1, y = MDS2), label = TAXA_nmds_species$Sample, col = "black", size = 2, vjust = -2) + geom_polygon(data = TAXA_nmds_species_hull, aes(x = MDS1, y = MDS2, fill = Transect), alpha = 0.5) 
@@ -139,9 +140,15 @@ write.csv(Guild_Taxa, "Raw_Data/Guilds_Aggregated.csv")
 #now we want to group each guild into 1 of 5 categories: Saprobe, Endomycorrhizae, Ectomycorrhizae, Plant Pathogen or Other 
 #If a guild has multiple trophic lifestyles (e.g. plant path and saprobe) then it will be counted for both those guilds
 Saprobe <- Guild_Taxa[,c(1,2,4,5,6,7,8,10,11,12,13,14,15,16,17,18,21,22,23,25,26,28,29,30,31,34,35,36,39,41,42,43,47,48,49,50,51,52,53,54,55,56,57)]
+#Save File 
+write.csv(Saprobe, file = "Cleaned Up Data/Saprobe.csv")
 Endomycorrhizae <- Guild_Taxa[,c(9)]
+#Save File 
+write.csv(Endomycorrhizae, file = "Cleaned Up Data/Endo.csv")
 Ectomycorrhizae <- Guild_Taxa[,c(10,19,20,21,22,23)]
-Plant_Pathogen <- Guild_Taxa[,c(4,6,7,11,21,27,28,29,30,35,46,47,48,49,50)]
+write.csv(Ectomycorrhizae, file = "Cleaned Up Data/Ecto.csv")
+Plant_Pathogen <- Guild_Taxa[,c(6,7,11,26,27,28,29,30,46,47,48,49,50)]
+write.csv(Plant_Pathogen, file = "Cleaned Up Data/Path.csv")
 Other <- Guild_Taxa[,c(1,2,3,4,5,6,7,8,10,11,12,20,21,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,48)]
 #Find the total count for each guild 
 Saprobe_Abundance <- rowSums(Saprobe)
@@ -203,40 +210,3 @@ par(1,2)
 TAXA_NMDS
 GUILD_NMDS
 dev.off()
-
-#Sumamrise phylums per transect 
-
-#Ecto 
-Ecto <- Taxa_Ecto_Transect %>%
-  select(-UMNR) %>% 
-  mutate(Family = replace_na(str_extract(TAXA, "[:alpha:]+aceae"), "Incertae sedis")) %>% 
-  # filter out Incertae sedis?
-  group_by(Family) %>% 
-  mutate(OTU_Number = row_number()) %>% 
-  ungroup() %>% 
-  pivot_longer(cols = 1:7, names_to = "Habitat", values_to = "Count") %>% 
-  group_by(Habitat) %>% 
-  top_n(wt = Count, n = 10) %>% 
-  mutate(OTU_Name = paste0(Family, "_", OTU_Number)) %>% 
-  arrange(desc(Count)) %>% 
-  group_by(Habitat) %>% 
-  mutate(level_order = row_number())
-#transform the count data so the extreme values are less tricky to visualize 
-Ecto$Count_Transformed <- log(Ecto$Count)
-View()
-
-ggplot(data = Ecto) +
-  geom_bar(aes(x = level_order, y = Count_Transformed, fill = Family), stat = "identity") +
-  facet_wrap(~ factor(Habitat, levels = c(
-    "Grass_Near", "Grass_Far", "Pioneer_Near", "Pioneer_Far", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Forest")), 
-    scales="free_x", ncol = 2) +
-  theme_classic() +
-  theme(axis.text.x = element_blank(), axis.ticks.x = element_blank(), strip.background = element_blank()) +
-  labs(x = "", y = "log(Abundance)") + scale_fill_manual(values = my_colours)
-
-
-
-
-
-
-
