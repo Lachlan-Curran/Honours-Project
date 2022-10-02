@@ -63,7 +63,7 @@ Relative_Abundance_Guilds <- tibble(Rel_Saprobe_Abundance, Rel_Ectomycorrhizhae_
 Relative_Abundance_Guilds_by_Sample  <- as.data.frame(Relative_Abundance_Guilds, row.names = Other_Abundance$Sample)
 Relative_Abundance_Guilds_by_Sample$Sample <- Other_Abundance$Sample
 colnames(Relative_Abundance_Guilds_by_Sample) <- c("Saprobes", "Ectomycorrhizae", "Endomycorrhizae", "Plant Pathogens", "Other Guilds", "Sample")
-Transect <- c(rep("Forest", 6), rep("Forest_Edge_Interior", 6), rep("Forest_Edge_Exterior", 6), rep("Pioneer_Near", 6), rep("Pioneer_Far", 6), rep("Grass_Near", 6), rep("UMNR",6), rep("Grass_Far", 5))
+Transect <- c(rep("Forest", 6), rep("Forest Edge Interior", 6), rep("Forest Edge Exterior", 6), rep("Pioneer Near", 6), rep("Pioneer Far", 6), rep("Grass Near", 6), rep("UMNR",6), rep("Grass Far", 5))
 Relative_Abundance_Guilds_by_Sample <- as.data.frame(Relative_Abundance_Guilds_by_Sample, row.names = Relative_Abundance_Guilds_by_Sample$Sample)
 
 
@@ -75,13 +75,13 @@ Relative_Abundance_Guilds_by_Transect$Plot <- Community_Taxa$X
 
 Relative_Transect_Abundance_Mean <- aggregate(Relative_Abundance_Guilds_by_Transect, by = list(Relative_Abundance_Guilds_by_Transect$Transect), FUN = mean)
 Relative_Transect_Abundance_Mean <- as.data.frame(Relative_Transect_Abundance_Mean[c(1,2,3,7,6,5,4,8),], row.names = Relative_Transect_Abundance_Mean$Group.1)
-Relative_Transect_Abundance_Mean <- as.data.frame(Relative_Transect_Abundance_Mean[,c(2:6)], row.names = c("Forest", "Forest_Edge_Exterior", "Forest_Edge_Interior", "Grass_Far", "Grass_Near", "Pioneer_Far", "Pioneer_Near", "UMNR"))
+Relative_Transect_Abundance_Mean <- as.data.frame(Relative_Transect_Abundance_Mean[,c(2:6)], row.names = c("Forest", "Forest Edge Exterior", "Forest Edge Interior", "Grass Far", "Grass Near", "Pioneer Far", "Pioneer Near", "UMNR"))
 Relative_Transect_Abundance_Mean <- as.matrix(Relative_Transect_Abundance_Mean)
 Relative_Transect_Abundance_Mean <- t(Relative_Transect_Abundance_Mean)
 Guild <- c("Saprobe", "Ectomycorrhizae", "Endomycorrhizae", "Plant Pathogen", "Other")
 Relative_Transect_Abundance_Mean <- as.data.frame(Relative_Transect_Abundance_Mean, row.names = Guild)
 Relative_Transect_Abundance_Mean <- as.data.frame(Relative_Transect_Abundance_Mean)
-col_order <- c("Forest", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Pioneer_Near", "Pioneer_Far", "Grass_Near", "Grass_Far", "UMNR")
+col_order <- c("Forest", "Forest Edge Interior", "Forest Edge Exterior", "Pioneer Near", "Pioneer Far", "Grass Near", "Grass Far", "UMNR")
 Relative_Transect_Abundance_Mean <- as.data.frame(Relative_Transect_Abundance_Mean[,col_order])
 Relative_Transect_Abundance_Mean <- as.matrix(Relative_Transect_Abundance_Mean)
 
@@ -91,13 +91,13 @@ my_colours <- c("#009E73", "#E69500", "#D55E00", "#56B4E9", "#0072B2",  "#CC6677
 
 
 pdf(file = "Outputs/Figures/Guild_Proportion_By_Transect.pdf")
-par(mar=c(4, 4.1, 4.1, 8.1), xpd=TRUE)
+par(mar=c(5.1, 4.1, 4.2, 8.1), xpd=TRUE)
 Relative_Abundance_Transect_Mean_Barplot <- barplot(Relative_Transect_Abundance_Mean, col = my_colours, cex.names = 0.5, las = 2) 
-legend("right", inset=c(-0.3, 0), bty = "n", cex = 0.9, legend=Guild, fill  = my_colours)
+legend("right", inset=c(-0.6, 0), bty = "n", cex = 0.9, legend=Guild, fill  = my_colours)
 dev.off()
 
 #Define Transect
-Transect <- c("Forest", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Pioneer_Near", "Pioneer_Far", "Grass_Near", "Grass_Far", "UMNR")
+Transect <- c("Forest", "Forest Edge Interior", "Forest Edge Exterior", "Pioneer Near", "Pioneer Far", "Grass Near", "Grass Far", "UMNR")
 #Define Colours
 
 #define level order so the x axis isn't arranged alphabetically 

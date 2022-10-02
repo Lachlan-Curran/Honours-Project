@@ -64,15 +64,16 @@ r.squaredGLMM(SR_vs_Distance_Model)
 SR_Distance_Predict<-data.frame(int = 1, x = seq_func(Community$Distance))
 #Create a new predictive model from this data and our previous model
 Distance_Predict<-lmer.predict(mod = SR_vs_Distance_Model, newdat=SR_Distance_Predict , se.mult=1.96, binom=F, poisson=F)
+#Change margins to fit legend 
 #Plot SR against distance
 with(Community, plot(Species_Richness ~ Distance, col=my_colours[factor(Transect)], pch = 16, ylab = "Species Richness", xlab = "Distance From Forest Edge (m)"))
-#Change margins to fit legend 
+
 #Plot our mixed effects model with confidence estimates 
 plot.CI.func(x.for.plot = seq_func(Community$Distance), pred = Distance_Predict$y, 
              upper = Distance_Predict$phi, lower=Distance_Predict$plo, 
              env.colour = "grey", env.trans=50, line.colour="black", line.weight=2, line.type=1)
 legend("right", legend = c("Forest", "Forest Edge Interior", "Forest Edge Exterior", "Pioneer Near", "Pioneer Far", "Grass Near", "Grass Far"), 
-             col = c("#009E73", "#E69500", "#D55E00", "#56B4E9", "#0072B2", "#CC6677", "#AA4499"), pch = 16, bty = "n", cex = 0.8, inset = c(-0.35,0))
+             col = c("#009E73", "#E69500", "#D55E00", "#56B4E9", "#0072B2", "#CC6677", "#AA4499"), pch = 16, bty = "n", cex = 0.8, inset = c(-0.4,0))
 
 
 
@@ -132,6 +133,7 @@ with(Community_by_Plot, plot(Species_Richness ~ AGV_COMP1, col=my_colours[factor
 plot.CI.func(x.for.plot = seq_func(Community_by_Plot$AGV_COMP1), pred = AGV_Predict$y, 
              upper = AGV_Predict$phi, lower=AGV_Predict$plo, 
              env.colour = "grey", env.trans=50, line.colour="black", line.weight=2, line.type=1)
+
 legend("right", legend = c("Forest", "Forest Edge Interior", "Forest Edge Exterior", "Pioneer Near", "Pioneer Far", "Grass Near", "Grass Far"), 
        col = c("#009E73", "#E69500", "#D55E00", "#56B4E9", "#0072B2", "#CC6677", "#AA4499"), pch = 16, bty = "n", cex = 0.8, inset = c(-0.35,0))
 
@@ -158,7 +160,7 @@ colnames(Soil_PCA_Scores) <- c("SOIL_COMP1", "SOIL_COMP2", "SOIL_COMP3")
 Community_by_Plot$SOIL_COMP1 <- Soil_PCA_Scores$SOIL_COMP1
 
 #Construct Model for Species richness vs SOIL
-SR_vs_SOIL <- lmer(Species_Richness ~ AGV_COMP1 + (1|Transect), data = Community_by_Plot)
+SR_vs_SOIL <- lmer(Species_Richness ~ SOIL_COMP1 + (1|Transect), data = Community_by_Plot)
 #Summary
 summary(SR_vs_SOIL)
 #Check Residuals
@@ -230,7 +232,7 @@ legend("right", legend = c("Forest", "Forest Edge Interior", "Forest Edge Exteri
 #Repeat for ABIOTIC variables 
 #Import Abiotic 
 Abiotic <- read.csv("Cleaned Up Data/Abiotc_Variables_MC.csv")
-Abiotic <- as.data.frame(Abiotic[,c(3:4)], row.names = Abiotic$X)
+Abiotic <- as.data.frame(Abiotic[,c(2:4)], row.names = Abiotic$X)
 #Perform PCA 
 Abiotic_PCA <- princomp(Abiotic)
 #Check the components
@@ -355,4 +357,9 @@ legend("right", legend = c("Forest", "Forest Edge Interior", "Forest Edge Exteri
 dev.off()
 
 
-
+#Testing the interaction between distance and AGV 
+#Add distance to community by plot 
+Community_by_Plot<- left_join(Community_by_Plot, Distance, by = "Transect")
+Distance_AGV <- lmer(Species_Richness ~ Distance + AGV_COMP1 + Distance*AGV_COMP1 + (1|Transect), data = Community_by_Plot)
+summary(Distance_AGV)
+r.squaredGLMM(Distance_AGV)

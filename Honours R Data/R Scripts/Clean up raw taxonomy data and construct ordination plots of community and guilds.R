@@ -186,7 +186,7 @@ stressplot(guild_nmds)
 #Extract point information
 guild_nmds_points <- as.data.frame(guild_nmds$points)
 #Add a transect column to guild_nmds_species - we need this info to group the points 
-Transect <- c(rep("Forest", 6), rep("Forest_Edge_Interior", 6), rep("Forest_Edge_Exterior", 6), rep("Pioneer_Near", 6), rep("Pioneer_Far", 6), rep("Grass_Near", 6), rep("Grass_Far", 5),  rep("UMNR",6))
+Transect <- c(rep("Forest", 6), rep("Forest Edge Interior", 6), rep("Forest Edge Exterior", 6), rep("Pioneer Near", 6), rep("Pioneer Far", 6), rep("Grass Near", 6), rep("Grass Far", 5),  rep("UMNR",6))
 guild_nmds_points$Transect <- Transect
 #Add a sample column as well, need this info to group points 
 guild_nmds_points$Sample <- Sample
@@ -197,7 +197,7 @@ ggplot(data = guild_nmds_points) + geom_point(aes(x =MDS1, y =MDS2))
 #Create Hull
 guild_nmds_points_hull <- guild_nmds_points %>% group_by(Transect) %>% slice(chull(MDS1,MDS2))
 #Reorder variables to stop ggplot from automatically plotting alphabetically 
-guild_nmds_points_hull$Transect <- factor(guild_nmds_points_hull$Transect, levels = c("Forest", "Forest_Edge_Interior", "Forest_Edge_Exterior", "Pioneer_Near", "Pioneer_Far", "Grass_Near", "Grass_Far", "UMNR"))
+guild_nmds_points_hull$Transect <- factor(guild_nmds_points_hull$Transect, levels = c("Forest", "Forest Edge Interior", "Forest Edge Exterior", "Pioneer Near", "Pioneer Far", "Grass Near", "Grass Far", "UMNR"))
 
 #Create plot
 GUILD_NMDS <- ggplot() + geom_point(data = guild_nmds_points, aes(x = MDS1, y = MDS2,)) + geom_text(data = guild_nmds_points, aes(x = MDS1, y = MDS2), label = guild_nmds_points$Sample, col = "black", size = 2, vjust = -2) + geom_polygon(data = guild_nmds_points_hull, aes(x = MDS1, y = MDS2, fill = Transect), alpha = 0.5) 

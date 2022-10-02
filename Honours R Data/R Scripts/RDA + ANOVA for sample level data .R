@@ -2,6 +2,8 @@ rm(list=ls())
 library(tidyverse)
 library(dplyr)
 library(vegan)
+library(patchwork)
+
 
 #Import Community Data
 Community <- read.csv("Cleaned Up Data/Fungi_by_Sample.csv")
@@ -15,12 +17,19 @@ Community<- as.data.frame(Community[c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,
 #Soil
 Soil_Nutrients <- read.csv("Raw_Data/Soil_Nutrients.csv") #This contains only MC data, we don't need to remove UMNR
 Soil_Nutrients <- as.data.frame(Soil_Nutrients[c(1:41),c(3:6)])
+#fix row error
+Soil_Nutrients[6,1] <- "Forest_3_B"
 #Assign row names 
 Soil_Nutrients <- as.data.frame(Soil_Nutrients[,c(2:4)], row.names = Soil_Nutrients$Sample)
+
+
+
 
 #Litter
 Leaf_Litter_Nutrients <- read.csv("Raw_Data/Leaf_Litter_N_P .csv")
 Leaf_Litter_Nutrients <- as.data.frame(Leaf_Litter_Nutrients[,c(3,4,7)], row.names = Leaf_Litter_Nutrients$Sample)
+
+
 
 Distance <-read.csv("Raw_Data/Sample_Coordinates_MC.csv")
 #Only take columns with lat and long 
@@ -255,3 +264,55 @@ anova(RDA_GN_Litter_Guilds)
 RDA_GF_Distance_Guilds <- rda(decostand(Grass_Far_Guilds, method = 'log'),Grass_Far_Distance)
 anova(RDA_GF_Distance_Guilds)
 
+#Plot community dissimilarity against spatial coordinates per transect 
+#Convert each dataframe to distance object 
+Forest_Com <- vegdist(Forest_Community)
+Forest_Dist <- dist(Forest_Distance)
+Forest_Edge_Interior_Com <- vegdist(Forest_Interior_Edge_Community)
+Forest_Edge_Interior_Dist <- dist(Forest_Interior_Edge_Distance)
+Forest_Edge_Exterior_Com <- vegdist(Forest_Exterior_Edge_Community)
+Forest_Edge_Exterior_Dist <- dist(Forest_Exterior_Edge_Distance)
+Pioneer_Near_Com <- vegdist(Pioneer_Near_Community)
+Pioneer_Near_Dist <- dist(Pioneer_Near_Distance)
+Pioneer_Far_Com <- vegdist(Pioneer_Far_Community)
+Pioneer_Far_Dist <- dist(Pioneer_Far_Distance)
+Grass_Near_Com <- vegdist(Grass_Near_Community)
+Grass_Near_Dist <- dist(Grass_Near_Distance)
+Grass_Far_Com <- vegdist(Grass_Far_Community)
+Grass_Far_Dist <-  dist(Grass_Far_Distance)
+
+
+#Define Plots
+Forest <- ggplot() + geom_point(aes(x = Forest_Dist, y = Forest_Com)) + theme(axis.title.x = element_blank(), axis.title.y = element_blank()) +ggtitle("Forest")
+Forest_Edge_Interior <- ggplot() + geom_point(aes(x = Forest_Edge_Interior_Dist, y = Forest_Edge_Interior_Com))+ theme(axis.title.x = element_blank(), axis.title.y = element_blank()) + ggtitle("Forest Edge Interior")
+Forest_Edge_Exterior <- ggplot() + geom_point(aes(x = Forest_Edge_Exterior_Dist, y = Forest_Edge_Exterior_Com)) + theme(axis.title.x = element_blank(), axis.title.y = element_blank()) + ggtitle("Forest Edge Exterior")
+Pioneer_Near <- ggplot() + geom_point(aes(x = Pioneer_Near_Dist, y = Pioneer_Near_Com)) + theme(axis.title.x = element_blank(), axis.title.y = element_blank()) + ggtitle("Pioneer Near")
+Pioneer_Far <- ggplot() + geom_point(aes(x = Pioneer_Far_Dist, y = Pioneer_Far_Com)) + theme(axis.title.x = element_blank(), axis.title.y = element_blank()) + ggtitle("Pioneer Far")
+Grass_Near <- ggplot() + geom_point(aes(x = Grass_Near_Dist, y = Grass_Near_Com )) + theme(axis.title.x = element_blank(), axis.title.y = element_blank()) + ggtitle("Grass Near")
+Grass_Far <- ggplot() + geom_point(aes(x = Grass_Far_Dist, y = Grass_Far_Com )) + theme(axis.title.x = element_blank(), axis.title.y = element_blank()) + ggtitle("Grass Far")
+
+par(mfrow = c(2,4))
+Forest + plot_spacer() + plot_spacer() +  Forest_Edge_Interior + Forest_Edge_Exterior + plot_spacer() +  Pioneer_Near + Pioneer_Far + plot_spacer() + Grass_Near + Grass_Far + plot_layout(ncol = 3) 
+
+
+#Plot all figures into one panel
+pdf(file = "Outputs/Figures/Sample_Distance_vs_Com.pdf")
+plot(Forest_Dist ~ Forest_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Forest_Edge_Interior_Dist ~ Forest_Edge_Interior_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Forest_Edge_Exterior_Dist ~ Forest_Edge_Exterior_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Pioneer_Near_Dist ~ Pioneer_Near_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Pioneer_Far_Dist ~ Pioneer_Far_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Grass_Near_Dist ~ Grass_Near_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Grass_Far_Dist ~ Grass_Far_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+dev.off()
+
+margin(1,1,1,5)
+par(mfrow=c(2,4))
+plot(Forest_Dist ~ Forest_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity") + plot_spacer()
+plot_spacer()
+plot(Forest_Edge_Interior_Dist ~ Forest_Edge_Interior_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Forest_Edge_Exterior_Dist ~ Forest_Edge_Exterior_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Pioneer_Near_Dist ~ Pioneer_Near_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Pioneer_Far_Dist ~ Pioneer_Far_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Grass_Near_Dist ~ Grass_Near_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
+plot(Grass_Far_Dist ~ Grass_Far_Com, ylab = "Community Dissimilarity", xlab = "Spatial Dissimilarity")
